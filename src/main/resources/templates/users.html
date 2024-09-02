@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header>
+    <div th:insert="logout-button"></div>
+</header>
+<h3>Users is working</h3>
+
+<p id="kanye"></p>
+
+<table>
+    <tr th:each="user: ${users}">
+
+        <td th:text="${user.id}" />
+        <td th:text="${user.username}" />
+    </tr>
+</table>
+<!--<script>-->
+<!--    fetch("https://api.kanye.rest")-->
+<!--        .then(response => {-->
+<!--            if(!response.ok){-->
+<!--                throw new Error('this obvi did not work lol')-->
+<!--            }-->
+<!--            return response-->
+<!--        })-->
+<!--        .then(data =>{-->
+<!--            return data.json()-->
+<!--        })-->
+<!--        .then(quote => {-->
+<!--            console.log(quote["quote"])-->
+<!--        })-->
+<!--</script>-->
+
+</body>
+</html>
