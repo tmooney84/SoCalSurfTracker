@@ -6,6 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>SoCal SurfTracker Login</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .video-time-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #player {
+            width: 560px;
+            height: 315px;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,14 +103,36 @@
         <a href="http://localhost:8080/register">Not Registered? | Sign up!</a>
     </div>
 </form>
+
 <!-- Video, Time, and Conditions Container -->
 <div class="video-time-container">
- <!--   <iframe src="https://www.youtube.com/embed/KV3ozZoQ13M?autoplay=1&mute=1" allowfullscreen></iframe> -->
-    <iframe src="https://www.youtube.com/embed/KV3ozZoQ13M" allowfullscreen></iframe>
+    <div id="player"></div>
+</div>
 
-    <div>
+<script>
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Create a new YT.Player object when the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'KV3ozZoQ13M', // YouTube Video ID
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    // Function to run when the player is ready
+    function onPlayerReady(event) {
+        event.target.setVolume(50); // Set volume to 50%
+        event.target.playVideo();    // Autoplay the video
+    }
+</script>
+
 </body>
 </html>
-
-
-
