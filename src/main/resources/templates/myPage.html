@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dynamic Fetch with Thymeleaf</title>
+</head>
+<body>
+<h1>Dynamic Fetch Example</h1>
+
+<button id="fetchButton">Fetch Data</button>
+<div id="result"></div>
+
+<script>
+    document.getElementById("fetchButton").addEventListener("click", function() {
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").textContent = JSON.stringify(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    });
+</script>
+</body>
+</html>

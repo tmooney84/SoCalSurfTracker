@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surf Tracker</title>
+  <link rel="icon" type="image/x-icon" href="surf.JPG">
+  <link rel="stylesheet" href="video_current_styles.css">
+  <script src="time.js" defer></script>
+  <style>
+    /* Add padding to table cells */
+    table.current-conditions td, 
+    table.current-conditions th {
+      padding: 10px 15px; /* 10px vertical padding, 15px horizontal padding */
+    }
+
+    /* Indentation for surf forecasting source names */
+    .source-indent {
+      text-indent: 15px; /* Adjust indentation as needed */
+    }
+
+    /* Example of custom styling, feel free to adjust as needed */
+    table.current-conditions {
+      border-collapse: collapse;
+      text-align: left;
+      width: 100%; /* Ensure table takes full width */
+    }
+
+    /* Styling for the header */
+    table.current-conditions th {
+      background-color: #30b12b;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Styling for the table rows */
+    table.current-conditions td {
+      border: 1px solid #dddddd; /* Optional: Adds a border between cells */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Side navigation bar -->
+  <div class="topnav">
+    <div class="dropdown">
+      <button class="dropbtn home">Breaks
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#ponto">Ponto (Carlsbad)</a>
+        <a href="#tamarack">Tamarack </a>
+        <a href="#oceanside">Oceanside </a>
+        <a href="#sano">San Onofre </a>
+        <a href="/lowerTrestlesCurrent">Lower Trestles</a>
+        <a href="#uppers">Upper Trestles</a>
+        <a href="/TStreetCurrent">T-Street</a>
+        <a href="#doheny">Doheny</a>
+        <a href="#saltcreek">Salt Creek</a>
+        <a href="#newport">Newport Beach</a>
+        <a href="#huntington">Huntington Beach</a>
+        <a href="#seal-beach">Seal Beach Pier</a>
+      </div>
+    </div>
+
+    <a class="current" href="/TStreetCurrent">Current</a>
+    <a class="hourly" href="/TStreetHourly">Hourly</a>
+    <a class="forecast" href="/TStreetFiveDay">5 Day</a>
+  </div>
+
+  <div>
+    <h2 style="text-align: left;">T-Street (San Clemente) <br> Conditions</h2>
+  </div>
+
+  <!-- Video, Time, and Conditions Container -->
+  <div class="video-time-container">
+    <iframe src="https://www.youtube.com/embed/2c7NV66YzKA" allowfullscreen></iframe>
+    <div>
+      <div id="time">14:45:23</div>
+      <div style="padding: 16px">
+        <div class="table-container" style="display: flex; justify-content: center;">
+          <table class="current-conditions" style="border-collapse: collapse; width: 25%; text-align: left">
+            <tr style="font-weight: bold; background-color: #30b12b; color: white;">
+            </tr>
+
+            <!-- Current Conditions -->
+            <tr>
+              <td style="font-size: 24px; white-space: nowrap; padding-right: 20px"><b>3-4ft</b></td>
+              <td class="highlight-bg" style="font-size: 24px; white-space: nowrap"><b>Fair</b></td>
+            </tr>
+            <tr>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Surf and Conditions Table -->
+  <div style="padding: 16px;font-weight: bold">
+    <div class="table-container" style="display: flex; justify-content: left;">
+      <table class="current-conditions" style="border-collapse: collapse; width: 50%; text-align: left;">
+        <tr>
+          <td style="white-space: nowrap;">
+            <a href="https://www.surfline.com/surf-report/t-street/5842041f4e65fad6a7708830?camId=5a3c086e1c60d700101da599">
+              SurfLine
+            </a>
+          </td>
+          <td style="white-space: nowrap;">3-4+</td>
+        </tr>
+
+        <tr>
+          <td style="white-space: nowrap;">
+            <a href="https://surfcaptain.com/forecast/san-clemente-california">
+              SurfCaptain
+            </a>
+          </td>
+          <td style="white-space: nowrap;">2-3</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">
+            <a href="https://deepswell.com/surf-report/US/South-Orange-County/T-Street-Trafalgar-Street/1057#google_vignette">
+              DeepSwell
+            </a>
+          </td>
+          <td style="white-space: nowrap;">3-5</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">
+            <a href="https://www.surf-forecast.com/breaks/T-Street/forecasts/latest/six_day">
+              Surf-Forecast
+            </a>
+          </td>
+          <td style="white-space: nowrap;">3-4</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">Wind</td>
+          <td style="white-space: nowrap;">5mph E</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">Tide</td>
+          <td style="white-space: nowrap;">Low Tide @ 16:00</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">Water Temperature</td>
+          <td style="white-space: nowrap;">67º</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">Air Temperature</td>
+          <td style="white-space: nowrap;">82ºF</td>
+        </tr>
+         <tr>
+          <td style="white-space: nowrap;">Sunrise</td>
+          <td style="white-space: nowrap;">6:53 AM</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">Sunset</td>
+          <td style="white-space: nowrap;">7:24 PM</td>
+        </tr>
+        <tr>
+          <td style="white-space: nowrap;">Weather</td>
+          <td style="white-space: nowrap;">Sunny</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Current Swells Table -->
+  <div style="padding: 16px;">
+    <h2 style="text-align: left;">Current Swells</h2>
+    <div class="table-container" style="display: flex; justify-content: left;">
+      <table class="current-conditions" style="border-collapse: collapse; width: 50%; text-align: center;">
+        <tr style="font-weight: bold; background-color: #30b12b; color: white;">
+          <td>Wave Height</td>
+          <td>Period</td>
+          <td>Direction</td>
+          <td>Angle</td>
+        </tr>
+        <tr>
+          <td><b>1.7ft</b></td>
+          <td><b>10s</b></td>
+          <td><b>S</b></td>
+          <td><b>177º</b></td>
+        </tr>
+        <tr>
+          <td><b>1.1ft</b></td>
+          <td><b>15s</b></td>
+          <td><b>SW</b></td>
+          <td><b>216º</b></td>
+        </tr>
+        <tr>
+          <td><b>1.0ft</b></td>
+          <td><b>7s</b></td>
+          <td><b>WNW</b></td>
+          <td><b>283º</b></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

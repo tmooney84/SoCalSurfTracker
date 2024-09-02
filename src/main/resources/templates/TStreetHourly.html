@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surf Tracker</title>
+  <link rel="icon" type="image/x-icon" href="surf.JPG">
+  <link rel="stylesheet" href="video_hourly.css">
+  <script src="time.js" defer></script>
+  <style>
+    /* Add padding to table cells */
+    table.current-conditions td, 
+    table.current-conditions th {
+      padding: 10px 15px;
+    }
+
+    /* Indentation for surf forecasting source names */
+    .source-indent {
+      text-indent: 15px;
+    }
+
+    /* Table styling */
+    table.current-conditions {
+      border-collapse: collapse;
+      text-align: left;
+      width: 100%;
+    }
+
+    table.current-conditions th {
+      background-color: #30b12b;
+      color: white;
+      font-weight: bold;
+    }
+
+    table.current-conditions td {
+      border: 1px solid #dddddd;
+    }
+
+
+
+/* Add padding to table cells */
+table.forecast-conditions td, 
+    table.forecast-conditions th {
+      padding: 10px 15px;
+    }
+
+    /* Indentation for surf forecasting source names */
+    .source-indent {
+      text-indent: 15px;
+    }
+
+    /* Table styling */
+    table.forecast-conditions {
+      border-collapse: collapse;
+      text-align: left;
+      width: 100%;
+    }
+
+    table.forecast-conditions th {
+      background-color: #30b12b;
+      color: white;
+      font-weight: bold;
+    }
+
+    table.forecast-conditions td {
+      border: 1px solid #dddddd;
+    }
+    /* Responsive styling for small screens */
+    @media screen and (max-width: 700px) {
+      table.forecast-conditions {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      table.forecast-conditions th, 
+      table.forecast-conditions td {
+        display: block;
+        text-align: left;
+        padding: 10px;
+      }
+
+      table.forecast-conditions th {
+        background-color: #30b12b;
+        color: white;
+        text-align: center;
+      }
+
+      table.forecast-conditions tr {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #dddddd;
+      }
+
+      /* Hide Day headers in mobile */
+      
+  table.forecast-conditions tr:nth-of-type(1),
+  table.forecast-conditions tr:nth-of-type(2),
+  table.forecast-conditions tr:nth-of-type(3) {
+    display: none;
+  }
+  table.forecast-conditions td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        text-transform: uppercase;
+      }
+
+  /*********/
+      table.current-conditions td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        text-transform: uppercase;
+      }
+
+      .video-time-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .video-time-container iframe {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Side navigation bar -->
+  <div class="topnav">
+    <div class="dropdown">
+      <button class="dropbtn home">Breaks
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#ponto">Ponto (Carlsbad)</a>
+        <a href="#tamarack">Tamarack </a>
+        <a href="#oceanside">Oceanside </a>
+        <a href="#sano">San Onofre </a>
+        <a href="/lowerTrestlesCurrent">Lower Trestles</a>
+        <a href="#uppers">Upper Trestles</a>
+        <a href="/TStreetCurrent">T-Street</a>
+        <a href="#doheny">Doheny</a>
+        <a href="#saltcreek">Salt Creek</a>
+        <a href="#newport">Newport Beach</a>
+        <a href="#huntington">Huntington Beach</a>
+        <a href="#seal-beach">Seal Beach Pier</a>
+      </div>
+    </div>
+
+    <a class="current" href="/TStreetCurrent">Current</a>
+    <a class="hourly" href="/TStreetHourly">Hourly</a>
+    <a class="forecast" href="/TStreetFiveDay">5 Day</a>
+  </div>
+
+  <div>
+    <h2 style="text-align: left;">T-Street (San Clemente) <br> Hourly Forecast </h2>
+  </div>
+
+
+<!-- Video, Time, and Conditions Container -->
+<div class="video-time-container">
+  <iframe src="https://www.youtube.com/embed/2c7NV66YzKA" allowfullscreen></iframe>
+  <div>
+    <div id="time">14:45:23</div>
+    <div style="padding: 16px">
+      <div class="table-container" style="display: flex; justify-content: center;">
+        <table class="current-conditions" style="border-collapse: collapse; width: 25%; text-align: left">
+          <tr style="font-weight: bold; background-color: #30b12b; color: white;">
+          </tr>
+
+          <!-- Current Conditions -->
+          <tr>
+            <td style="font-size: 24px; white-space: nowrap; padding-right: 20px"><b>3-4ft</b></td>
+            <td class="highlight-bg" style="font-size: 24px; white-space: nowrap"><b>Fair</b></td>
+          </tr>
+          <tr>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Hourly Forecast Table -->
+  <div style="padding: 16px">
+    <div class="table-container" style="display: flex; justify-content: left;">
+      <table class="forecast-conditions">
+        <tr style="background-color: #00b6dd; color: white;">
+          <th style="background-color: #00b6dd; color: white;">Day</th>
+          <td>12 AM</td>
+          <td>3 AM</td>
+          <td>6 AM</td>
+          <td>9 AM</td>
+          <td>12 PM</td>
+          <td>3 PM</td>
+          <td>6 PM</td>
+          <td>9 PM</td>
+        </tr>
+        <tr>
+          <th>Wave Height</th>
+          <td data-label= "12 AM">2-3 ft</td>
+          <td data-label= "3 AM">2-3 ft</td>
+          <td data-label= "6 AM">2-3 ft</td>
+          <td data-label= "9 AM">2-3 ft</td>
+          <td data-label= "12 PM">3-4 ft</td>
+          <td data-label= "3 PM">3-4+ ft</td>
+          <td data-label= "6 PM">2-3 ft</td>
+          <td data-label= "9 PM">2-3 ft</td>
+        </tr>
+        <tr>
+          <th class="source-indent">SurfLine</th>
+          <td data-label= "12 AM">2-3 ft</td>
+          <td data-label= "3 AM">2-3 ft</td>
+          <td data-label= "6 AM">2-3 ft</td>
+          <td data-label= "9 AM">2-3 ft</td>
+          <td data-label= "12 PM">3-4 ft</td>
+          <td data-label= "3 PM">3-4+ ft</td>
+          <td data-label= "6 PM">2-3 ft</td>
+          <td data-label= "9 PM">2-3 ft</td>
+        </tr>
+        <tr>
+          <th class="source-indent">SurfCaptain</th>
+          <td data-label= "12 AM">2-3 ft</td>
+          <td data-label= "3 AM">2-3 ft</td>
+          <td data-label= "6 AM">2-3 ft</td>
+          <td data-label= "9 AM">2-3 ft</td>
+          <td data-label= "12 PM">3-4 ft</td>
+          <td data-label= "3 PM">3-4+ ft</td>
+          <td data-label= "6 PM">2-3 ft</td>
+          <td data-label= "9 PM">2-3 ft</td>
+        </tr>
+        <tr>
+          <th class="source-indent">Surf-Forecast</th>
+          <td data-label= "12 AM">2-3 ft</td>
+          <td data-label= "3 AM">2-3 ft</td>
+          <td data-label= "6 AM">2-3 ft</td>
+          <td data-label= "9 AM">2-3 ft</td>
+          <td data-label= "12 PM">3-4 ft</td>
+          <td data-label= "3 PM">3-4+ ft</td>
+          <td data-label= "6 PM">2-3 ft</td>
+          <td data-label= "9 PM">2-3 ft</td>
+        </tr>
+        <tr>
+          <th class="source-indent">DeepSwell</th>
+          <td data-label= "12 AM">2-3 ft</td>
+          <td data-label= "3 AM">2-3 ft</td>
+          <td data-label= "6 AM">2-3 ft</td>
+          <td data-label= "9 AM">2-3 ft</td>
+          <td data-label= "12 PM">3-4 ft</td>
+          <td data-label= "3 PM">3-4+ ft</td>
+          <td data-label= "6 PM">2-3 ft</td>
+          <td data-label= "9 PM">2-3 ft</td>
+        </tr>
+        <tr>
+          <th>Quality</th>
+          <td data-label= "12 AM">Fair</td>
+          <td data-label= "3 AM">Fair</td>
+          <td data-label= "6 AM">Good</td>
+          <td data-label= "9 AM">Good</td>
+          <td data-label= "12 PM">Good</td>
+          <td data-label= "3 PM">Fair</td>
+          <td data-label= "6 PM">Fair</td>
+          <td data-label= "9 PM">Fair</td>
+        </tr>
+        <tr>
+          <th>Primary Swell</th>
+          <td data-label= "12 AM">1.1FT @ 16s SW 214º</td>
+          <td data-label= "3 AM">1.1FT @ 15s SW 212º</td>
+          <td data-label= "6 AM">1.0FT @ 14s SW 211º</td>
+          <td data-label= "9 AM">1.0FT @ 14s SW 211º</td>
+          <td data-label= "12 PM">1.1FT @ 14s SW 211º</td>
+          <td data-label= "3 PM">1.0FT @ 14s SW 211º</td>
+          <td data-label= "6 PM">1.0FT @ 14s SW 211º</td>
+          <td data-label= "9 PM">1.0FT @ 14s SW 211º</td>
+        </tr>
+        <tr>
+          <th>Water Temperature</th>
+          <td data-label= "12 AM">67ºF</td>
+          <td data-label= "3 AM">67ºF</td>
+          <td data-label= "6 AM">67ºF</td>
+          <td data-label= "9 AM">67ºF</td>
+          <td data-label= "12 PM">67ºF</td>
+          <td data-label= "3 PM">67ºF</td>
+          <td data-label= "6 PM">67ºF</td>
+          <td data-label= "9 PM">67ºF</td>
+        </tr>
+        <tr>
+          <th>Air Temperature</th>
+          <td data-label= "12 AM">67ºF</td>
+          <td data-label= "3 AM">87ºF</td>
+          <td data-label= "6 AM">87ºF</td>
+          <td data-label= "9 AM">87ºF</td>
+          <td data-label= "12 PM">87ºF</td>
+          <td data-label= "3 PM">87ºF</td>
+          <td data-label= "6 PM">87ºF</td>
+          <td data-label= "9 PM">87ºF</td>
+        </tr>
+        <tr>
+          <th>Weather</th>
+          <td data-label= "12 AM">Clear</td>
+          <td data-label= "3 AM">Clear</td>
+          <td data-label= "6 AM">Clear</td>
+          <td data-label= "9 AM">Clear</td>
+          <td data-label= "12 PM">Clear</td>
+          <td data-label= "3 PM">Clear</td>
+          <td data-label= "6 PM">Clear</td>
+          <td data-label= "9 PM">Clear</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

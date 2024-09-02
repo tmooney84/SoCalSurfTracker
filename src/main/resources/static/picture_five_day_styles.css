@@ -1,0 +1,176 @@
+/* General styling */
+body {
+  background-color: white;
+}
+
+/* Top navigation styling */
+.topnav {
+  overflow: hidden;
+  background-color: #00b6dd;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 50px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.home {
+  background-color: #30b12b;
+  color: white;
+}
+
+.topnav a.hourly,
+.topnav a.forecast {
+  background-color: #00b6dd;
+}
+
+/* Dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: #30b12b;
+  font-family: inherit;
+  margin: 0;
+}
+
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Time Display styling */
+#time {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Highlight styling for specific table cells */
+td.highlight-bg {
+  background-color: #30b12b;
+  color: white;
+}
+
+/* Ensure no wrapping in the green-highlighted cells */
+td.highlight-bg {
+  background-color: #30b12b;
+  color: white;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/* Video and Time Container */
+.video-time-container {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start; /* Adjust to align items at the start */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Styling for the image */
+.video-time-container img {
+  width: 345px;
+  height: 250px;
+}
+
+/* Responsive styling for small screens */
+@media screen and (max-width: 700px) {
+  .topnav {
+    flex-direction: column; /* Stack navigation items vertically on small screens */
+    align-items: center; /* Center items horizontally */
+
+  }
+
+  .topnav a {
+    flex: 1; /* Allow items to grow and shrink */
+    text-align: center; /* Center text */
+    padding: 14px 20px;
+  }
+
+  .video-time-container {
+    flex-direction: column; /* Stack video and conditions block vertically */
+    align-items: center; /* Center items */
+  }
+
+  .video-time-container img {
+    width: 100%; /* Adjust to make the image fit the screen width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+  .video-time-container > div {
+    width: 100%; /* Full width for the conditions block */
+    text-align: center; /* Center text inside the conditions block */
+  }
+
+  .forecast-conditions {
+    width: 100%; /* Full width for tables on small screens */
+    font-size: 16px; /* Smaller font size */
+  }
+
+    /* Adjust table cells for readability on mobile */
+.forecast-conditions td, 
+.forecast-conditions th {
+    padding: 8px 10px; /* Smaller padding */
+  }
+}
