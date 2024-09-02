@@ -31,7 +31,7 @@ public class SecurityConfig  {
                 .userDetailsService(jpaDetailsService)
                 .formLogin((form) -> form
                         .loginPage("/login")
-                        .defaultSuccessUrl("/users")
+                        .defaultSuccessUrl("/Home")
                         .failureUrl("/login-error")
                         .permitAll()
                 )

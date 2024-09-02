@@ -36,7 +36,7 @@ public class SecurityController {
         User temp = user;
         temp.setPassword(encrypted);
         userService.save(temp);
-        return "redirect:users";
+        return "redirect:login";
 
     }
 
@@ -51,11 +51,10 @@ public class SecurityController {
         return "login";
     }
 
-    @PostMapping("/login")
+   @PostMapping("/login")
     public String login(@ModelAttribute("user") User user) {
-        return "redirect:Home";
+        return "redirect:users";
     }
-
 
 
 }
