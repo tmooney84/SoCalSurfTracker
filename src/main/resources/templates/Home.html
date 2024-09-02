@@ -80,7 +80,8 @@
 
 <!-- Video, Time, and Conditions Container -->
 <div class="video-time-container">
-  <iframe src="https://www.youtube.com/embed/2c7NV66YzKA" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/NbsrijM_puc" allowfullscreen></iframe>
+
   <div>
     <div id="time">14:45:23</div>
     <div style="padding: 16px">
@@ -174,9 +175,12 @@
 </div>
 
 <table>
+  <tr>
+    <th><b>Fellow Surfers</b></th>
+  </tr>
   <tr th:each="user: ${users}">
-    <td th:text="${user.id}"></td>
     <td th:text="${user.username}"></td>
+    <!-- <td th:text="${user.homebreak}"></td> -->
   </tr>
 </table>
 
