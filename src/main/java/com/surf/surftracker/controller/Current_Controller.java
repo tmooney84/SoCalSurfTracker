@@ -1,7 +1,9 @@
 package com.surf.surftracker.controller;
 
+import com.surf.surftracker.UserService;
 import com.surf.surftracker.model.Current;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Current_Controller {
 
     private final Current lowerTrestlesCurrent;
+    private final UserService userService;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
-    public Current_Controller(Current lowerTrestlesCurrent) {
+    public Current_Controller(Current lowerTrestlesCurrent,UserService userService, BCryptPasswordEncoder passwordEncoder) {
         this.lowerTrestlesCurrent = lowerTrestlesCurrent;
         System.out.println("Autowiring Successful: " + lowerTrestlesCurrent);
+        this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/test")
@@ -37,7 +43,6 @@ public class Current_Controller {
     @GetMapping("/lowerTrestlesCurrent")
     public String getLowerTrestles(Model model) {
         model.addAttribute("surfSpot", lowerTrestlesCurrent);
-        model.addAttribute("SurfSpot", lowerTrestlesCurrent);
         return "lowerTrestlesCurrent";
     }
 
@@ -66,6 +71,15 @@ public class Current_Controller {
         return "TStreetFiveDay"; // Stubbed Page
     }
 
+
+
+    //for testing purposes
+    @GetMapping("/Home")
+    public String TStreetCurrent2(Model model) {
+        model.addAttribute("lowerTrestles", lowerTrestlesCurrent);
+        model.addAttribute("users", userService.findAll());
+        return "Home";
+    }
 
 
 }

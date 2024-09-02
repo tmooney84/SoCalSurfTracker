@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surf Tracker</title>
+  <link rel="icon" type="image/x-icon" href="surf.JPG">
+  <link rel="stylesheet" href="video_current_styles.css">
+  <script src="time.js" defer></script>
+  <style>
+    /* Add padding to table cells */
+    table.current-conditions td,
+    table.current-conditions th {
+      padding: 10px 15px; /* 10px vertical padding, 15px horizontal padding */
+    }
+
+    /* Indentation for surf forecasting source names */
+    .source-indent {
+      text-indent: 15px; /* Adjust indentation as needed */
+    }
+
+    /* Example of custom styling, feel free to adjust as needed */
+    table.current-conditions {
+      border-collapse: collapse;
+      text-align: left;
+      width: 100%; /* Ensure table takes full width */
+    }
+
+    /* Styling for the header */
+    table.current-conditions th {
+      background-color: #30b12b;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Styling for the table rows */
+    table.current-conditions td {
+      border: 1px solid #dddddd; /* Optional: Adds a border between cells */
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div th:insert="logout-button"></div>
+</header>
+
+<!-- Side navigation bar -->
+<div class="topnav">
+  <div class="dropdown">
+    <button class="dropbtn home">Breaks
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#ponto">Ponto (Carlsbad)</a>
+      <a href="#tamarack">Tamarack </a>
+      <a href="#oceanside">Oceanside </a>
+      <a href="#sano">San Onofre </a>
+      <a href="/lowerTrestlesCurrent">Lower Trestles</a>
+      <a href="#uppers">Upper Trestles</a>
+      <a href="/TStreetCurrent">T-Street</a>
+      <a href="#doheny">Doheny</a>
+      <a href="#saltcreek">Salt Creek</a>
+      <a href="#newport">Newport Beach</a>
+      <a href="#huntington">Huntington Beach</a>
+      <a href="#seal-beach">Seal Beach Pier</a>
+    </div>
+  </div>
+
+  <a class="current" href="/TStreetCurrent">Current</a>
+  <a class="hourly" href="/TStreetHourly">Hourly</a>
+  <a class="forecast" href="/TStreetFiveDay">5 Day</a>
+</div>
+
+<div>
+  <h2 style="text-align: left;">T-Street (San Clemente) <br> Conditions</h2>
+</div>
+
+<!-- Video, Time, and Conditions Container -->
+<div class="video-time-container">
+  <iframe src="https://www.youtube.com/embed/2c7NV66YzKA" allowfullscreen></iframe>
+  <div>
+    <div id="time">14:45:23</div>
+    <div style="padding: 16px">
+      <div class="table-container" style="display: flex; justify-content: center;">
+        <table class="current-conditions" style="border-collapse: collapse; width: 25%; text-align: left">
+          <tr style="font-weight: bold; background-color: #30b12b; color: white;">
+          </tr>
+
+          <!-- Current Conditions -->
+          <tr>
+            <td style="font-size: 24px; white-space: nowrap; padding-right: 20px"><b>3-4ft</b></td>
+            <td class="highlight-bg" style="font-size: 24px; white-space: nowrap"><b>Fair</b></td>
+          </tr>
+          <tr>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Surf and Conditions Table -->
+<div style="padding: 16px;font-weight: bold">
+  <div class="table-container" style="display: flex; justify-content: left;">
+    <table class="current-conditions" style="border-collapse: collapse; width: 50%; text-align: left;">
+      <tr>
+        <td style="white-space: nowrap;">Ponto (Carlsbad)</td>
+        <td style="white-space: nowrap;">3-4+</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+
+      <tr>
+        <td style="white-space: nowrap;">Tamarack</td>
+        <td style="white-space: nowrap;">2-3</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Oceanside</td>
+        <td style="white-space: nowrap;">3-5</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">San Onofre</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Lower Trestles</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${lowerTrestles != null && lowerTrestles.averageWaveHeight != null ? lowerTrestles.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Upper Trestles</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">T-Street</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Doheny</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Salt Creek</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Newport Beach</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Huntington Beach</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Seal Beach Pier</td>
+        <td style="white-space: nowrap;">3-4</td>
+        <td style="white-space: nowrap;">Fair</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<table>
+  <tr th:each="user: ${users}">
+    <td th:text="${user.id}"></td>
+    <td th:text="${user.username}"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

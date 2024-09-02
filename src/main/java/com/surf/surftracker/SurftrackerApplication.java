@@ -7,8 +7,6 @@ import com.surf.surftracker.dto.*;
 import com.surf.surftracker.mapper.CurrentMapper;
 import com.surf.surftracker.model.Current;
 import com.surf.surftracker.service.*;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication(scanBasePackages = "com.surf.surftracker")

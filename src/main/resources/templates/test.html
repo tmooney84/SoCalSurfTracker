@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Surf Spot Conditions</title>
 </head>
 <body>
-<h1>The test is working</h1>
 
+<h1>Surf Spot Conditions for <span th:text="${surfSpot.surfSpotName != null ? surfSpot.surfSpotName : 'N/A'}"></span></h1>
 
-
+<p>Average Wave Height: <span th:text="${surfSpot.averageWaveHeight != null ? surfSpot.averageWaveHeight : 'N/A'}"></span></p>
+<p>Wave Quality: <span th:text="${surfSpot.waveQuality != null ? surfSpot.waveQuality : 'N/A'}"></span></p>
+<p>SurfLine Wave Height: <span th:text="${surfSpot.surfLineWaveHeight != null ? surfSpot.surfLineWaveHeight : 'N/A'}"></span></p>
+<p>SurfCaptain Wave Height: <span th:text="${surfSpot.surfCaptainWaveHeight != null ? surfSpot.surfCaptainWaveHeight : 'N/A'}"></span></p>
+<p>DeepSwell Wave Height: <span th:text="${surfSpot.deepSwellWaveHeight != null ? surfSpot.deepSwellWaveHeight : 'N/A'}"></span></p>
+<p>SurfForecast Wave Height: <span th:text="${surfSpot.surfForecastWaveHeight != null ? surfSpot.surfForecastWaveHeight : 'N/A'}"></span></p>
+<p>Wind: <span th:text="${surfSpot.wind != null ? surfSpot.wind : 'N/A'}"></span></p>
+<p>Tide: <span th:text="${surfSpot.tide != null ? surfSpot.tide : 'N/A'}"></span></p>
+<p>Future Tide: <span th:text="${surfSpot.futureTide != null ? surfSpot.futureTide : 'N/A'}"></span></p>
+<p>Water Temperature: <span th:text="${surfSpot.waterTemperature != null ? surfSpot.waterTemperature : 'N/A'}"></span></p>
+<p>Air Temperature: <span th:text="${surfSpot.airTemperature != null ? surfSpot.airTemperature : 'N/A'}"></span></p>
+<p>Sunrise: <span th:text="${surfSpot.sunrise != null ? surfSpot.sunrise : 'N/A'}"></span></p>
+<p>Sunset: <span th:text="${surfSpot.sunset != null ? surfSpot.sunset : 'N/A'}"></span></p>
+<p>Weather Conditions: <span th:text="${surfSpot.weatherConditions != null ? surfSpot.weatherConditions : 'N/A'}"></span></p>
+<p>Swell One: <span th:text="${surfSpot.swellOne != null ? surfSpot.swellOne : 'N/A'}"></span></p>
+<p>Swell Two: <span th:text="${surfSpot.swellTwo != null ? surfSpot.swellTwo : 'N/A'}"></span></p>
+<p>Swell Three: <span th:text="${surfSpot.swellThree != null ? surfSpot.swellThree : 'N/A'}"></span></p>
 
 </body>
 </html>
