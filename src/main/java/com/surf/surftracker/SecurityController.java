@@ -53,7 +53,7 @@ public class SecurityController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute("user") User user) {
-        return "redirect:users";
+        return "redirect:Home";
     }
 
 
