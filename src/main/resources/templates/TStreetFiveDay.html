@@ -132,10 +132,6 @@
 
 <body>
 
-<!-- Logout Button -->
-<header>
-  <div th:insert="logout-button"></div>
-</header>
 
   <!-- Side navigation bar -->
   <div class="topnav">
@@ -162,6 +158,10 @@
     <a class="current" href="/TStreetCurrent">Current</a>
     <a class="hourly" href="/TStreetHourly">Hourly</a>
     <a class="forecast" href="/TStreetFiveDay">5 Day</a>
+
+    <!-- Logout Button -->
+
+    <div class = "logout-button" th:insert="logout-button"></div>
   </div>
 
   <div>

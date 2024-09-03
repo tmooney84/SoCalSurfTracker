@@ -70,9 +70,14 @@ public class Current_Controller {
         return "TStreetFiveDay"; // Stubbed Page
     }
 
+    /*
+    @GetMapping("/")
+    public String TStreetFiveDay() {
+        return "TStreetFiveDay"; // Stubbed Page
+    }
+*/
 
 
-    //for testing purposes
     @GetMapping("/Home")
     public String TStreetCurrent2(Model model) {
         model.addAttribute("lowerTrestles", lowerTrestlesCurrent);

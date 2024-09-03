@@ -43,10 +43,7 @@
 
 <body>
 
-<!-- Logout Button -->
-<header>
-  <div th:insert="logout-button"></div>
-</header>
+
 
 <!-- Side navigation bar -->
 <div class="topnav">
@@ -71,7 +68,14 @@
   </div>
 
   <a class="current" href="/Home">Home</a>
+
+  <!-- Logout Button -->
+
+  <div class = "logout-button" th:insert="logout-button"></div>
+
+
 </div>
+
 
 <div>
   <h2 style="text-align: left;">SoCal SurfTracker <br> Current Conditions</h2>

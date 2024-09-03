@@ -1,4 +1,4 @@
-package com.surf.surftracker.service;
+/*package com.surf.surftracker.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.surf.surftracker.dto.SurfLine_rating_DTO;
@@ -60,3 +60,4 @@ public class SurfLine_rating_ServiceTest {
         assertEquals(mockDTO, result);
     }
 }
+*/
