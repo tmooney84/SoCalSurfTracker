@@ -1,4 +1,4 @@
-package com.surf.surftracker;
+package com.surf.surftracker.model;
 
 
 import jakarta.persistence.*;

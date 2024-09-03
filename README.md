@@ -1,6 +1,6 @@
 # SoCal SurfTracker
 
-- Welcome to the SoCal SurfTracker Repository
+Welcome to the SoCal SurfTracker Repository
 - SoCal SurfTracker synthesizes the surf and weather forecasts from several different providers to arm you with
   the knowledge to confidently grab your board and go! 
 
@@ -101,6 +101,8 @@ In addition to 5-day weather and surf forecasts there are photos and videos for 
 - **Java:** For implementing the program within Spring Boot.
 - **JavaScript:** For adding interactivity to the website, including external scripts, event handling, and more.
 - **JSoup:** For scraping necessary webdata from several websites.
+- **JUnit:** For unit testing
+- **Mockito:** For mocking external interfaces so that dummy functionalities can be added to a mock interface used in unit testing
 - **Spring Boot:** For running the underlying web infrastructure and Tomcat Server.
 - **Spring Data JPA:** For storing user data to backend database using MySQL.
 - **Spring Security:** For implementing a login and persistence of users.

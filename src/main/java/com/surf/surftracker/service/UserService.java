@@ -1,5 +1,7 @@
-package com.surf.surftracker;
+package com.surf.surftracker.service;
 
+import com.surf.surftracker.model.User;
+import com.surf.surftracker.repository.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,7 +19,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    User save(User user){
+    public User save(User user){
         return userRepository.save(user);
 
     }

@@ -1,5 +1,6 @@
-package com.surf.surftracker;
+package com.surf.surftracker.repository;
 
+import com.surf.surftracker.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

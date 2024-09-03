@@ -1,5 +1,6 @@
-package com.surf.surftracker;
+package com.surf.surftracker.service;
 
+import com.surf.surftracker.model.SecurityUser;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

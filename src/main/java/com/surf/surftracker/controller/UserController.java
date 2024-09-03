@@ -1,5 +1,6 @@
-package com.surf.surftracker;
+package com.surf.surftracker.controller;
 
+import com.surf.surftracker.service.UserService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
