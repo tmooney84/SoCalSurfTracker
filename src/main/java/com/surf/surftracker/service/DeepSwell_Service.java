@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class DeepSwell_Service {
     private Current testLowersCurrent;
-
+    private SurfSpotURLList currentDeepSwellURL;
 
     public DeepSwell_Service(Current testLowersCurrent)
     {
@@ -23,6 +23,7 @@ public class DeepSwell_Service {
 
     String[] DSurl = {
             SurfSpotURLList.LowerTrestles.deepSwellURL()
+          //  currentDeepSwellURL
     };
         public void getDeepSwellCurrent() {
             try {
