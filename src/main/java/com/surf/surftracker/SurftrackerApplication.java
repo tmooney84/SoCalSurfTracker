@@ -64,6 +64,7 @@ public class SurftrackerApplication {
 			ltCurrentMapper.SL_WaveQuality();
 			ltCurrentMapper.SL_WeatherConditons();
 			ltCurrentMapper.SL_Wind();
+			lowerTrestlesCurrent.setSurfSpotName("Lower Trestles");
 
 			lt_ds_service.getDeepSwellCurrent();
 			lt_sc_service.getSurfCaptainCurrent();

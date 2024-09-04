@@ -129,12 +129,14 @@ label {
 /* Logout Button styling */
 .logout-button {
   float: right;
-  background-color: #00b6dd;
   color: white;
+  text-align: center;
   padding: 14px 50px;
-  font-size: 17px;
   text-decoration: none;
+  font-size: 17px;
+  background-color: #00b6dd; /* Same blue as the topnav */
   border: none;
+  cursor: pointer;
 }
 
 .logout-button:hover {

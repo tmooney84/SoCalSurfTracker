@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Logout Button Fragment</title>
+    <style>
+        .logout-button {
+            float: right;
+            color: white;
+            text-align: center;
+            padding: 6px 50px; /* Matches padding of other nav items */
+            font-size: 17px;
+            background-color: #00b6dd; /* Blue background to match nav bar */
+            border: none;
+            cursor: pointer;
+            height: 100%; /* Ensure it takes up the full height of the nav bar */
+        }
+        .logout-button:hover {
+            background-color: #ddd; /* Same hover effect as other nav items */
+            color: black;
+        }
+    </style>
 </head>
 <body>
 <div th:fragment="logout-button">
     <form th:action="@{/logout}" method="post">
-        <button type="submit">Logout</button>
+        <button type="submit" class="logout-button">
+            Logout
+        </button>
     </form>
 </div>
 </body>
