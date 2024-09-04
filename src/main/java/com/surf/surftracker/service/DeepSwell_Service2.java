@@ -10,11 +10,11 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DeepSwell_Service {
+public class DeepSwell_Service2 {
     private Current testLowersCurrent;
 
 
-    public DeepSwell_Service(Current testLowersCurrent)
+    public DeepSwell_Service2(Current testLowersCurrent)
     {
         this.testLowersCurrent = testLowersCurrent;
     }

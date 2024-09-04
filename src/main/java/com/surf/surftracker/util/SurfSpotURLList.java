@@ -27,7 +27,7 @@ public class SurfSpotURLList {
     //6 Upper Trestles
 
     //7) T-Street
-    public static SurfSpotURLs TStreet = new SurfSpotURLs("T-Street", "https://services.surfline.com/kbyg/spots/forecasts/rating?spotId=5842041f4e65fad6a7708830&days=5&intervalHours=1&cacheEnabled=true",
+    public static SurfSpotURLs tStreet = new SurfSpotURLs("T-Street", "https://services.surfline.com/kbyg/spots/forecasts/rating?spotId=5842041f4e65fad6a7708830&days=5&intervalHours=1&cacheEnabled=true",
             "https://services.surfline.com/kbyg/spots/forecasts/sunlight?spotId=5842041f4e65fad6a7708830&days=16&intervalHours=1",
             "https://services.surfline.com/kbyg/spots/forecasts/surf?cacheEnabled=true&days=5&intervalHours=1&spotId=5842041f4e65fad6a7708830&units[waveHeight]=FT",
             "https://services.surfline.com/kbyg/spots/forecasts/swells?cacheEnabled=true&days=5&intervalHours=1&spotId=5842041f4e65fad6a7708830&units[swellHeight]=FT",
