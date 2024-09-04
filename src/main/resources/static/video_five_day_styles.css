@@ -118,25 +118,6 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-button[type="submit"] {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
 
 
 /* Video and Time Container */
@@ -164,11 +145,11 @@ button[type="submit"] {
   border: none;
 }
 
-.logout-button:hover {
+/*.logout-button:hover {
   background-color: #ddd;
   color: black;
 }
-
+*/
 /* Responsive styling for small screens */
 @media screen and (max-width: 700px) {
   .topnav {

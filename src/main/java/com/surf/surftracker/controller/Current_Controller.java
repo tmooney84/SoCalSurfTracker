@@ -57,17 +57,17 @@ public class Current_Controller {
 
     @GetMapping("/TStreetCurrent")
     public String TStreetCurrent() {
-        return "TStreetCurrent"; // Stubbed Page
+        return "tStreetCurrent"; // Stubbed Page
     }
 
     @GetMapping("/TStreetHourly")
     public String TStreetHourly() {
-        return "TStreetHourly"; // Stubbed Page
+        return "tStreetHourly"; // Stubbed Page
     }
 
     @GetMapping("/TStreetFiveDay")
     public String TStreetFiveDay() {
-        return "TStreetFiveDay"; // Stubbed Page
+        return "tStreetFiveDay"; // Stubbed Page
     }
 
     /*
