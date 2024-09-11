@@ -1,7 +1,7 @@
 package com.surf.surftracker;
 
 import com.surf.surftracker.dto.SurfLine_tides_DTO;
-import com.surf.surftracker.service.SurfLine_tides_Service;
+import com.surf.surftracker.service.oldServices.SurfLine_tides_Service;
 
 public class SLTidesTester {
     public static void main(String[] args) {

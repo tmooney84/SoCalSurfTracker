@@ -1,7 +1,7 @@
 package com.surf.surftracker;
 
 import com.surf.surftracker.dto.SurfLine_surf_DTO;
-import com.surf.surftracker.service.SurfLine_surf_Service;
+import com.surf.surftracker.service.oldServices.SurfLine_surf_Service;
 
 public class SLSurfTester {
     public static void main(String[] args) {

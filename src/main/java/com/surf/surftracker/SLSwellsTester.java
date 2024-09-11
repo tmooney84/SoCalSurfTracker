@@ -1,7 +1,7 @@
 package com.surf.surftracker;
 
 import com.surf.surftracker.dto.SurfLine_swells_DTO;
-import com.surf.surftracker.service.SurfLine_swells_Service;
+import com.surf.surftracker.service.oldServices.SurfLine_swells_Service;
 
 public class SLSwellsTester {
     public static void main(String[] args) {

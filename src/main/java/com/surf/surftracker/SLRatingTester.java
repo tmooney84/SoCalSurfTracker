@@ -1,7 +1,7 @@
 package com.surf.surftracker;
 
 import com.surf.surftracker.dto.SurfLine_rating_DTO;
-import com.surf.surftracker.service.SurfLine_rating_Service;
+import com.surf.surftracker.service.oldServices.SurfLine_rating_Service;
 
 public class SLRatingTester {
     public static void main(String[] args) {

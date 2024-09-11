@@ -1,5 +1,5 @@
 
-package com.surf.surftracker.service;
+package com.surf.surftracker.service.oldServices;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.surf.surftracker.dto.SurfLine_wind_DTO;

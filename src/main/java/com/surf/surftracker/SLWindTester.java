@@ -1,7 +1,7 @@
 package com.surf.surftracker;
 
 import com.surf.surftracker.dto.SurfLine_wind_DTO;
-import com.surf.surftracker.service.SurfLine_wind_Service;
+import com.surf.surftracker.service.oldServices.SurfLine_wind_Service;
 
 public class SLWindTester {
     public static void main(String[] args) {

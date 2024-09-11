@@ -1,7 +1,7 @@
 package com.surf.surftracker;
 
 import com.surf.surftracker.dto.SurfLine_sunlight_DTO;
-import com.surf.surftracker.service.SurfLine_sunlight_Service;
+import com.surf.surftracker.service.oldServices.SurfLine_sunlight_Service;
 
 public class SLSunlightTester {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package com.surf.surftracker;
 
 import com.surf.surftracker.dto.SurfLine_weather_DTO;
-import com.surf.surftracker.service.SurfLine_weather_Service;
+import com.surf.surftracker.service.oldServices.SurfLine_weather_Service;
 
 public class SLWeatherTester {
     public static void main(String[] args) {
