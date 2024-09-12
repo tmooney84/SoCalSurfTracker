@@ -39,6 +39,17 @@ public class SurfSpotURLList {
             "https://www.surf-forecast.com/breaks/T-Street/forecasts/latest/");
 
     //8) Doheny
+    public static SurfSpotURLs doheny = new SurfSpotURLs("Doheny","https://services.surfline.com/kbyg/spots/forecasts/rating?spotId=5842041f4e65fad6a77088d7&days=5&intervalHours=1&cacheEnabled=true",
+            "https://services.surfline.com/kbyg/spots/forecasts/sunlight?spotId=5842041f4e65fad6a77088d7&days=16&intervalHours=1",
+            "https://services.surfline.com/kbyg/spots/forecasts/surf?cacheEnabled=true&days=5&intervalHours=1&spotId=5842041f4e65fad6a77088d7&units[waveHeight]=FT",
+            "https://services.surfline.com/kbyg/spots/forecasts/swells?cacheEnabled=true&days=5&intervalHours=1&spotId=5842041f4e65fad6a77088d7&units[swellHeight]=FT",
+            "https://services.surfline.com/kbyg/spots/forecasts/tides?spotId=5842041f4e65fad6a77088d7&days=6&cacheEnabled=true&units[tideHeight]=FT",
+            "https://services.surfline.com/kbyg/spots/forecasts/weather?spotId=5842041f4e65fad6a77088d7&days=16&intervalHours=1&cacheEnabled=true&units[temperature]=F",
+            "https://services.surfline.com/kbyg/spots/forecasts/wind?spotId=5842041f4e65fad6a77088d7&days=5&intervalHours=1&corrected=false&cacheEnabled=true&units[windSpeed]=KTS",
+            "https://deepswell.com/surf-report/US/South-Orange-County/Doheny-State-Beach/1027",
+            "https://surfcaptain.com/forecast/dana-point-california/",
+            "https://surfcaptain.com/forecast/dana-point-california/");
+
 
     //9) Salt Creek
 
