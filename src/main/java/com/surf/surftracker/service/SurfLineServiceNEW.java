@@ -1,37 +1,33 @@
 package com.surf.surftracker.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.surf.surftracker.dto.SurfLine_rating_DTO;
-import com.surf.surftracker.dto.SurfLine_sunlight_DTO;
-import com.surf.surftracker.dto.SurfLine_surf_DTO;
-import com.surf.surftracker.dto.SurfLine_swells_DTO;
-import com.surf.surftracker.dto.SurfLine_tides_DTO;
-import com.surf.surftracker.dto.SurfLine_weather_DTO;
-import com.surf.surftracker.dto.SurfLine_wind_DTO;
+import com.surf.surftracker.dto.*;
+import com.surf.surftracker.service.oldServices.SurfLine_surf_Service;
 import com.surf.surftracker.util.SurfSpotURLList;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
-import com.surf.surftracker.service.oldServices.SurfLine_surf_Service;
+
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import java.io.Serializable;
-
-public class SurfLineService implements Serializable{
+public class SurfLineServiceNEW implements Serializable{
         private final WebClient webClient;
         private final ObjectMapper objectMapper;
+        private final String surfLineId;
     private static final Logger LOGGER = Logger.getLogger(SurfLine_surf_Service.class.getName());
 
-        public SurfLineService() {
+        public SurfLineServiceNEW(String surfLineId) {
             this.webClient = WebClient.builder().build();
             this.objectMapper = new ObjectMapper();
+            this.surfLineId = surfLineId;
         }
 
 
 
         //Webclient to a GET method and pull the JSON for mapping
         public SurfLine_rating_DTO getSurfLineRating() throws Exception {
-            String surfLineRating_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/rating?spotId=" + SurfSpotURLList.LowerTrestles.surfLineId() + "&days=5&intervalHours=1&cacheEnabled=trued";
+            String surfLineRating_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/rating?spotId=" + surfLineId + "&days=5&intervalHours=1&cacheEnabled=trued";
             // String SurfSpotURLFactory.LowerTrestles
             //LowerTrestles.getRatingURL();
             String response = webClient.get()
@@ -49,7 +45,7 @@ public class SurfLineService implements Serializable{
 
     //Webclient to a GET method and pull the JSON for mapping
     public SurfLine_sunlight_DTO getSurfLineSunlight() throws Exception {
-        String surfLineSunlight_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/sunlight?spotId=" + SurfSpotURLList.LowerTrestles.surfLineId() + "&days=16&intervalHours=1";
+        String surfLineSunlight_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/sunlight?spotId=" + surfLineId + "&days=16&intervalHours=1";
 
         String response = webClient.get()
                 .uri(surfLineSunlight_LowerTrestles)
@@ -65,7 +61,7 @@ public class SurfLineService implements Serializable{
 
 
     public SurfLine_surf_DTO getSurfLineSurf() throws Exception {
-        String surfLineSurf_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/surf?cacheEnabled=true&days=5&intervalHours=1&spotId="+ SurfSpotURLList.LowerTrestles.surfLineId() + "&units[waveHeight]=FT";
+        String surfLineSurf_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/surf?cacheEnabled=true&days=5&intervalHours=1&spotId="+ surfLineId + "&units[waveHeight]=FT";
 
         try {
             String response = webClient.get()
@@ -90,7 +86,7 @@ public class SurfLineService implements Serializable{
 
     //Webclient to a GET method and pull the JSON for mapping
     public SurfLine_swells_DTO getSurfLineSwells() throws Exception {
-        String surfLineSwells_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/swells?cacheEnabled=true&days=5&intervalHours=1&spotId="+ SurfSpotURLList.LowerTrestles.surfLineId() +"&units[swellHeight]=FT";
+        String surfLineSwells_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/swells?cacheEnabled=true&days=5&intervalHours=1&spotId="+ surfLineId +"&units[swellHeight]=FT";
 
         String response = webClient.get()
                 .uri(surfLineSwells_LowerTrestles)
@@ -107,7 +103,7 @@ public class SurfLineService implements Serializable{
 
     //Webclient to a GET method and pull the JSON for mapping
     public SurfLine_tides_DTO getSurfLineTides() throws Exception {
-        String surfLineTides_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/tides?spotId="+ SurfSpotURLList.LowerTrestles.surfLineId() + "&days=6&cacheEnabled=true&units[tideHeight]=FT";
+        String surfLineTides_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/tides?spotId="+ surfLineId + "&days=6&cacheEnabled=true&units[tideHeight]=FT";
 
         String response = webClient.get()
                 .uri(surfLineTides_LowerTrestles)
@@ -123,7 +119,7 @@ public class SurfLineService implements Serializable{
 
     //Webclient to a GET method and pull the JSON for mapping
     public SurfLine_weather_DTO getSurfLineWeather() throws Exception {
-        String surfLineWeather_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/weather?spotId=" + SurfSpotURLList.LowerTrestles.surfLineId() + "&days=16&intervalHours=1&cacheEnabled=true&units[temperature]=F";
+        String surfLineWeather_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/weather?spotId=" + surfLineId + "&days=16&intervalHours=1&cacheEnabled=true&units[temperature]=F";
 
         String response = webClient.get()
                 .uri(surfLineWeather_LowerTrestles)
@@ -138,7 +134,7 @@ public class SurfLineService implements Serializable{
 
 
     public SurfLine_wind_DTO getSurfLineWind() throws Exception {
-        String surfLineWind_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/wind?spotId=" + SurfSpotURLList.LowerTrestles.surfLineId() + "&days=5&intervalHours=1&corrected=false&cacheEnabled=true&units[windSpeed]=KTS";
+        String surfLineWind_LowerTrestles = "https://services.surfline.com/kbyg/spots/forecasts/wind?spotId=" + surfLineId + "&days=5&intervalHours=1&corrected=false&cacheEnabled=true&units[windSpeed]=KTS";
 
         try {
             String response = webClient.get()

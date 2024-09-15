@@ -10,24 +10,25 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DeepSwell_Service2 {
-    private Current testLowersCurrent;
+public class DeepSwell_ServiceNEW {
+    //private Current testLowersCurrent;
 
 
-    public DeepSwell_Service2(Current testLowersCurrent)
-    {
-        this.testLowersCurrent = testLowersCurrent;
-    }
+   // public DeepSwell_ServiceNEW(Current testLowersCurrent)
+   // {
+    //    this.testLowersCurrent = testLowersCurrent;
+  //  }
 
     //Need to clean up the code so that it reflects
 
-    String[] DSurl = {
-            SurfSpotURLList.LowerTrestles.deepSwellURL()
-    };
-        public void getDeepSwellCurrent() {
+//    String[] DSurl = {
+//            SurfSpotURLList.LowerTrestles.deepSwellURL()
+//    };
+    private String deepSwellWaveHeight = "";
+
+        public String getDeepSwellCurrent(String dSurl) {
             try {
-                for (int i = 0; i < DSurl.length; i++) {
-                    Document dsConnect = Jsoup.connect(DSurl[i])
+                    Document dsConnect = Jsoup.connect(dSurl)
                             .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
                                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36").get();
 
@@ -39,14 +40,14 @@ public class DeepSwell_Service2 {
 
                         if (matcher.find()) {
                             String waveHeight = matcher.group(1);
-                            testLowersCurrent.setDeepSwellWaveHeight(waveHeight+" ft");
+                            deepSwellWaveHeight = waveHeight +" ft";
                         } else {
-                            System.out.println("Wave height not found at location #" + i);
+                          deepSwellWaveHeight = "N/A";
                         }
                     }
-                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
+       return deepSwellWaveHeight;
         }
 }
