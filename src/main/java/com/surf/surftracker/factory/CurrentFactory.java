@@ -16,7 +16,7 @@ public class CurrentFactory {
     /*
     public static Current createCurrent(SurfSpotURLs spotURLs) {
     try{
-    SurfLineService currentSurfLineService = new SurfLineService(String spotsURLs.surfLineId);
+    SurfLineService currentSurfLineService = new SurfLineService(String spotURLs.surfLineId);
      ^^^ spotURLs.surfLineId needs to be passed in???
 
 
@@ -122,11 +122,13 @@ public class CurrentFactory {
     Map<String, Current> currentMap = new HashMap<>();
 
     # create Current objects from records and add to map
+    int spotId = 0;
     for (SurfSpotURLs spot : surfSpots) {
 
     Current current = CurrentFactory.createCurrent(spot);
+    spotId++
     #set SurfSpotId here because it requires the for loop iteration; i+1 so the IDs start at 1
-    current.setSurfSpotId(i+1);
+    current.setSurfSpotId(spotId);
     System.out.println(current.surfSpotName + ": " + current);
     currentMap.put(current.getSurfSpotName, current);
 
