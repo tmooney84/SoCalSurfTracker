@@ -42,13 +42,13 @@ public class CurrentMapperNEW {
     }
 
     //Current average wave height    String average of the 4 forecasts
-
-    public void AverageWaveHeight() {
-        String[] waveHeights = {
-                currentSpot.getSurfLineWaveHeight(),
-                currentSpot.getDeepSwellWaveHeight(),
-                currentSpot.getSurfCaptainWaveHeight(),
-                currentSpot.getSurfForecastWaveHeight()
+    public String averageWaveHeight(String surfLineWaveHeight, String deepSwellWaveHeight, String surfCaptainWaveHeight, String surfForecastWaveHeight)
+    { String[] waveHeights = {
+            surfLineWaveHeight, deepSwellWaveHeight, surfCaptainWaveHeight, surfForecastWaveHeight
+//                currentSpot.getSurfLineWaveHeight(),
+//                currentSpot.getDeepSwellWaveHeight(),
+//                currentSpot.getSurfCaptainWaveHeight(),
+//                currentSpot.getSurfForecastWaveHeight()
         };
         // Calculate the average height
         double averageHeight = calculateAverageWaveHeight(waveHeights);
@@ -58,7 +58,8 @@ public class CurrentMapperNEW {
 
         // Print the formatted average height
         System.out.println("Average Wave Height: " + formattedHeight);
-        currentSpot.setAverageWaveHeight(formattedHeight);
+        //currentSpot.setAverageWaveHeight(formattedHeight);
+        return formattedHeight;
     }
 
     // Method to calculate the average wave height
@@ -149,21 +150,22 @@ public class CurrentMapperNEW {
 
 
     //Current WaveQuality
-    public void SL_WaveQuality() {
+    public String SL_waveQuality() {
         List<SurfLine_rating_DTO.Rating> ratings = currentRatingDTO.getData().getRating();
         for (SurfLine_rating_DTO.Rating rating : ratings) {
             if (Long.valueOf(rating.getTimestamp()).equals(nearestHour)) {
                 String currentRating = rating.getRatingDetails().getKey();
                 currentRating = currentRating.replaceAll("_", " ");
-                currentSpot.setWaveQuality(currentRating);
-                return;
+
+                //currentSpot.setWaveQuality(currentRating);
+                return currentRating;
             }
         }
         throw new NoSuchElementException("No rating found for the timestamp: " + nearestHour);
     }
 
     //SurfLine Wave Height
-    public void SL_Surf() {
+    public String SL_surf() {
         List<SurfLine_surf_DTO.Surf> surfList = currentSurfDTO.getData().getSurf();
 
         for (SurfLine_surf_DTO.Surf surf : surfList) {
@@ -179,9 +181,10 @@ public class CurrentMapperNEW {
                 }
 
                 String waveHeight = String.format("%d-%d%s ft",min,max,plusSign);
-                currentSpot.setSurfLineWaveHeight(waveHeight);
+                return waveHeight;
+                //currentSpot.setSurfLineWaveHeight(waveHeight);
                 //System.out.println("SL Wave Height is: " + waveHeight);
-                return; // Exit after finding and processing the relevant surf details
+               // return; // Exit after finding and processing the relevant surf details
             }
         }
 
@@ -189,7 +192,7 @@ public class CurrentMapperNEW {
     }
 
     //Sunrise
-    public void SL_Sunrise() {
+    public String SL_sunrise() {
         List<SurfLine_sunlight_DTO.Sunlight> sunlightList = currentSunlightDTO.getData().getSunlight();
         for (SurfLine_sunlight_DTO.Sunlight sun : sunlightList) {
             if (sun.getMidnight() == midnight) {
@@ -197,15 +200,15 @@ public class CurrentMapperNEW {
                 ZonedDateTime sunriseTime = Instant.ofEpochSecond(sunriseTimestamp)
                         .atZone(ZoneId.of("America/Los_Angeles"));
                 String formattedSunriseTime = sunriseTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-                currentSpot.setSunrise(formattedSunriseTime);
-                return;
+                //currentSpot.setSunrise(formattedSunriseTime);
+                return formattedSunriseTime;
             }
         }
         throw new NoSuchElementException("No sunrise found for the midnight timestamp: " + midnight);
     }
 
     //Sunset
-    public void SL_Sunset() {
+    public String SL_sunset() {
         List<SurfLine_sunlight_DTO.Sunlight> sunlightList = currentSunlightDTO.getData().getSunlight();
         for (SurfLine_sunlight_DTO.Sunlight sun : sunlightList) {
             if (sun.getMidnight() == midnight) {
@@ -217,15 +220,15 @@ public class CurrentMapperNEW {
                 ZonedDateTime sunriseTime = Instant.ofEpochSecond(sunriseTimestamp)
                         .atZone(ZoneId.of("America/Los_Angeles"));
                 String formattedSunriseTime = sunriseTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-                currentSpot.setSunset(formattedSunriseTime);
-                return;
+                //currentSpot.setSunset(formattedSunriseTime);
+                return formattedSunriseTime;
             }
         }
         throw new NoSuchElementException("No sunrise found for the midnight timestamp: " + midnight);
     }
 
     //Wind and Wind Direction
-    public void SL_Wind() {
+    public String SL_wind() {
         List<SurfLine_wind_DTO.WindData.WindEntry> windEntries = currentWindDTO.getData().getWind();
 
         for (SurfLine_wind_DTO.WindData.WindEntry windEntry : windEntries) {
@@ -234,8 +237,8 @@ public class CurrentMapperNEW {
                 int direction = windEntry.getDirection().intValue();
                 String formattedDirection = getCompassDirection(direction);
                 String windSpeedDirection = String.format("%dkts %s", speed, formattedDirection);
-                currentSpot.setWind(windSpeedDirection);
-                return;
+               // currentSpot.setWind(windSpeedDirection);
+                return windSpeedDirection;
             }
         }
         throw new NoSuchElementException("No wind found for the timestamp: " + TimeStampUtils.NearestHour());
@@ -246,16 +249,16 @@ public class CurrentMapperNEW {
         return compassDirections[index % 16];
     }
 
-    //Water temperature current
-    public void SL_AirTemp(){
+    //Air temperature current
+    public String SL_airTemp(){
         List<SurfLine_weather_DTO.DataData.WeatherEntry> weatherEntries = currentWeatherDTO.getData().getWeather();
         long nearestHour = TimeStampUtils.NearestHour();
 
         for (SurfLine_weather_DTO.DataData.WeatherEntry weatherEntry : weatherEntries) {
             if (weatherEntry.getTimestamp().equals(nearestHour)) {
                 String temperature = String.format("%d°F", Math.round(weatherEntry.getTemperature()));
-                currentSpot.setAirTemperature(temperature);
-                return;
+                //currentSpot.setAirTemperature(temperature);
+                return temperature;
             }
         }
         throw new NoSuchElementException("No temperature found for the timestamp: " + nearestHour);
@@ -264,14 +267,14 @@ public class CurrentMapperNEW {
     //Weather					    String Search by time @hour and then get rid of "_" and all caps maybe regex?
 
 
-    public void SL_WeatherConditons(){
-        List<SurfLine_weather_DTO.DataData.WeatherEntry> condtionEntries = currentWeatherDTO.getData().getWeather();
+    public String SL_weatherConditions(){
+        List<SurfLine_weather_DTO.DataData.WeatherEntry> conditionEntries = currentWeatherDTO.getData().getWeather();
 
-        for (SurfLine_weather_DTO.DataData.WeatherEntry conditionEntry : condtionEntries) {
+        for (SurfLine_weather_DTO.DataData.WeatherEntry conditionEntry : conditionEntries) {
             if (conditionEntry.getTimestamp().equals(nearestHour)) {
                 String weatherCondition = conditionEntry.getCondition().replace("_"," ");
-                currentSpot.setWeatherConditions(weatherCondition);
-                return;
+                //currentSpot.setWeatherConditions(weatherCondition);
+                return weatherCondition;
             }
         }
         throw new NoSuchElementException("No weather found for the timestamp: " + nearestHour);
@@ -279,7 +282,7 @@ public class CurrentMapperNEW {
 
     //Tide current				    String Low Tide @ 16:00 >>> will have to have some logic for finding the low or high tide and time
 
-    public void SL_Tides() {
+    public String SL_tides() {
         List<SurfLine_tides_DTO.DataData.TideEntry> tideEntries = currentTidesDTO.getData().getTides();
         boolean tideFound = false;
 
@@ -295,19 +298,21 @@ public class CurrentMapperNEW {
                 }
 
                 tideInfo = String.format("%.1f ft %s", tideHeight, tideType);
-                currentSpot.setTide(tideInfo);
-                System.out.println("Here is the tide info: " + tideInfo);
-                tideFound = true;
-                break;
+                return tideInfo;
+//                 currentSpot.setTide(tideInfo);
+//                System.out.println("Here is the tide info: " + tideInfo);
+//                tideFound = true;
+//                break;
             }
         }
-        if (!tideFound) {
-            throw new NoSuchElementException("No tide information found for the timestamp: " + nearestHour);
-        }
+        throw new NoSuchElementException("No tide information found for the timestamp: " + nearestHour);
+//        if (!tideFound) {
+//            throw new NoSuchElementException("No tide information found for the timestamp: " + nearestHour);
+//        }
     }
 
     //Future Low or High Tide
-    public void SL_FutureTides() {
+    public String SL_futureTides() {
         List<SurfLine_tides_DTO.DataData.TideEntry> tideEntries = currentTidesDTO.getData().getTides();
         String futureTideInfo = null; // Initialize to null to check if a tide is found
 
@@ -326,13 +331,14 @@ public class CurrentMapperNEW {
         if (futureTideInfo == null) {
             throw new NoSuchElementException("No future tide found after the timestamp: " + nearestHour);
         }
-        currentSpot.setFutureTide(futureTideInfo);
-        System.out.println("Here is the future tide info: " + futureTideInfo);
+        return futureTideInfo;
+        //currentSpot.setFutureTide(futureTideInfo);
+        //System.out.println("Here is the future tide info: " + futureTideInfo);
     }
 
 
     //Current Swells				    String Top 1.6ft @ 14s SSW 193º three swells locate by hour and pull top 3; need logic for SSW, SSE etc. 251 degrees is WSW...so find 					 something for the logic
-    public void SL_Swells() {
+    public String[] SL_swells() {
         List<SurfLine_swells_DTO.DataData.SwellEntry> swellEntries = currentSwellsDTO.getData().getSwells();
 
         // Find the SwellEntry for the given timestamp
@@ -350,20 +356,21 @@ public class CurrentMapperNEW {
                         swellInfos[i] = String.format("%.1fft @ %ds %s %.0fº",
                                 swell.getHeight(), swell.getPeriod(), compassDirection, swell.getDirection());
                     }
+                    return swellInfos;
 
                     // Set each swell string into the corresponding CurrentSpot method
-                    currentSpot.setSwellOne(swellInfos[0]);
-                    currentSpot.setSwellTwo(swellInfos[1]);
-                    currentSpot.setSwellThree(swellInfos[2]);
+//                    currentSpot.setSwellOne(swellInfos[0]);
+//                    currentSpot.setSwellTwo(swellInfos[1]);
+//                    currentSpot.setSwellThree(swellInfos[2]);
 
                     // Print the stored swell information
-                    for (int i = 0; i < swellInfos.length; i++) {
-                        System.out.println("Swell " + (i + 1) + ": " + swellInfos[i]);
-                    }
+//                    for (int i = 0; i < swellInfos.length; i++) {
+//                        System.out.println("Swell " + (i + 1) + ": " + swellInfos[i]);
+//                    }
                 } else {
                     throw new NoSuchElementException("Not enough swells data available for the timestamp: " + nearestHour);
                 }
-                return;
+              //  return;
             }
         }
         throw new NoSuchElementException("No swell data found for the timestamp: " + nearestHour);

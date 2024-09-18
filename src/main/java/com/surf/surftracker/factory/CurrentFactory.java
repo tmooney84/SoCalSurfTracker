@@ -45,17 +45,28 @@ public class CurrentFactory {
 		*** Map data to Current object >>> rename .SL_FutureTides(); to futureTides ...etc.
 
 			// Map data to Current object
-			CurrentMapper currentMapper = new CurrentMapper(lowerTrestlesCurrent, ratingDTO, sunlightDTO, surfDTO, windDTO, weatherDTO, tidesDTO, swellsDTO);
-			currentMapper.futureTides();
-			currentMapper.swells();
-			currentMapper.sunrise();
-			currentMapper.sunset();
-			currentMapper.surf();
-			currentMapper.tides();
-			currentMapper.airTemp();
-			currentMapper.waveQuality();
-			currentMapper.weatherConditons();
-			currentMapper.wind();
+			CurrentMapperNEW currentMapper = new CurrentMapper(ratingDTO, sunlightDTO, surfDTO, windDTO, weatherDTO, tidesDTO, swellsDTO);
+			String futureTide = currentMapper.SL_futureTides();
+			String[] swells = currentMapper.SL_swells();
+			String swellOne = swells[0];
+			String swellTwo = swells[1];
+			String swellThree = swells[2];
+
+			String sunrise = currentMapperNEW.SL_sunrise();
+			String sunset = currentMapper.SL_sunset();
+			String surfLineWaveHeight = currentMapper.SL_surf();
+			String tide = currentMapper.SL_tides();
+			String airTemperature = currentMapper.SL_airTemp();
+			String waveQuality = currentMapper.SL_waveQuality();
+			String weatherConditions = currentMapper.SL_weatherConditions();
+			String wind = currentMapper.SL_wind();
+
+
+***********
+(surfSpotID, surfSpotName, averageWaveHeight, waveQuality, surfLineWaveHeight, surfCaptainWaveHeight,
+      deepSwellWaveHeight, surfForecastWaveHeight, wind, tide, futureTide, waterTemperature,
+      airTemperature, sunrise, sunset, weatherConditions, swellOne, swellTwo, swellThree)
+***********
 
 	        String surfSpotName = spotURLs.surfSpotName;
 
@@ -64,11 +75,11 @@ public class CurrentFactory {
             String surfForecastWaveHeight = sF_Service.getSurfForecastCurrent(spotURLs.surfForecastURL);
 
             // Average Wave Height Needs to be found last
+			String averageWaveHeight = currentMapper.averageWaveHeight(surfLineWaveHeight, deepSwellWaveHeight, surfCaptainWaveHeight, surfForecastWaveHeight);
 
-			currentMapper.averageWaveHeight();
 
-            String waterTemperature = "N/A";
             //need to add external api
+            String waterTemperature = "N/A";
 
             int surfSpotId = null; .... set in runner
             or int? ^^^  *** change surfSpotID to surfSpotId in model class and make an int!!!
