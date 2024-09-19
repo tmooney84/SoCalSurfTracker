@@ -1,9 +1,12 @@
 package com.surf.surftracker.factory;
 
-import com.surf.surftracker.dto.SurfLine_surf_DTO;
+import com.surf.surftracker.dto.*;
+import com.surf.surftracker.mapper.CurrentMapper;
+import com.surf.surftracker.mapper.CurrentMapperNEW;
 import com.surf.surftracker.model.Current;
 import com.surf.surftracker.service.DeepSwell_Service;
 import com.surf.surftracker.service.SurfForecast_Service;
+import com.surf.surftracker.service.SurfLineService;
 import com.surf.surftracker.service.Surf_Captain_Service;
 import com.surf.surftracker.util.SurfSpotURLs;
 
@@ -13,24 +16,24 @@ public class CurrentFactory {
     CurrentFactory(SurfSpotURLs spotURLs) {
         this.spotURLs = spotURLs;
     }
-    /*
+
     public static Current createCurrent(SurfSpotURLs spotURLs) {
     try{
     SurfLineService currentSurfLineService = new SurfLineService(String spotURLs.surfLineId);
-     ^^^ spotURLs.surfLineId needs to be passed in???
+   //  ^^^ spotURLs.surfLineId needs to be passed in???
 
 
     DeepSwell_Service dS_Service = new DeepSwell_Service(spotURLs.deepSwellURL);
-                                                               ^^^ does this need to be passed in here or can be below
-                                                               if here then make sure to update the DeepSwell_Service/NEW to have this
-                                                               passed in at the class level... or like below at the method level
+//                                                               ^^^ does this need to be passed in here or can be below
+//                                                               if here then make sure to update the DeepSwell_Service/NEW to have this
+//                                                               passed in at the class level... or like below at the method level
     Surf_Captain_Service sC_Service = new Surf_Captain_Service(spotURLs.surfCaptainURL);
     SurfForecast_Service sF_service = new SurfForecast_Service(spotURLs.surfForecastURL);
 
 
 
 
-    *** Need to spin up DTO objects for parsing
+//    *** Need to spin up DTO objects for parsing
 
     			// Fetch data from services
 			SurfLine_rating_DTO ratingDTO = currentSurfLineService.getSurfLineRating();
@@ -42,10 +45,10 @@ public class CurrentFactory {
 			SurfLine_wind_DTO windDTO = currentSurfLineService.getSurfLineWind();
 
 
-		*** Map data to Current object >>> rename .SL_FutureTides(); to futureTides ...etc.
+//		*** Map data to Current object >>> rename .SL_FutureTides(); to futureTides ...etc.
 
 			// Map data to Current object
-			CurrentMapperNEW currentMapper = new CurrentMapper(ratingDTO, sunlightDTO, surfDTO, windDTO, weatherDTO, tidesDTO, swellsDTO);
+			CurrentMapperNEW currentMapper = new CurrentMapperNEW(ratingDTO, sunlightDTO, surfDTO, windDTO, weatherDTO, tidesDTO, swellsDTO);
 			String futureTide = currentMapper.SL_futureTides();
 			String[] swells = currentMapper.SL_swells();
 			String swellOne = swells[0];
@@ -61,13 +64,13 @@ public class CurrentFactory {
 			String weatherConditions = currentMapper.SL_weatherConditions();
 			String wind = currentMapper.SL_wind();
 
-
+/*
 ***********
 (surfSpotID, surfSpotName, averageWaveHeight, waveQuality, surfLineWaveHeight, surfCaptainWaveHeight,
       deepSwellWaveHeight, surfForecastWaveHeight, wind, tide, futureTide, waterTemperature,
       airTemperature, sunrise, sunset, weatherConditions, swellOne, swellTwo, swellThree)
 ***********
-
+*/
 	        String surfSpotName = spotURLs.surfSpotName;
 
 	        String deepSwellWaveHeight = dS_Service.getDeepSwellCurrent(spotURLs.deepSwellURL);

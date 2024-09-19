@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Current {
-    private String surfSpotID;
+    private int surfSpotId;
     private String surfSpotName;
     private String averageWaveHeight;
     private String waveQuality;
