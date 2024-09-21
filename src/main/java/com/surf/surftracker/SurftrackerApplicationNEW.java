@@ -21,10 +21,12 @@ import java.util.Map;
 public class SurftrackerApplicationNEW {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SurftrackerApplicationNEW.class, args);
+//		SpringApplication.run(SurftrackerApplicationNEW.class, args);
+
+	Map<String,Current> currentMap = getCurrent();
 	}
 
-	public Map<String, Current> getLowerTrestlesCurrent() {
+	public static Map<String, Current> getCurrent() {
 //	@Bean
 
 
