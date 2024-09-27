@@ -42,6 +42,9 @@ public class SecurityConfig  {
                         .invalidateHttpSession(true) // Invalidate the session
                         .deleteCookies("JSESSIONID") // Delete cookies
                 )
+
+                //oath
+                //oidc users
                 .build();
 
     }
