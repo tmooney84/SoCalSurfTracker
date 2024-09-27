@@ -2,6 +2,7 @@ package com.surf.surftracker.controller;
 
 import com.surf.surftracker.model.User;
 import com.surf.surftracker.service.UserService;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +49,10 @@ public class SecurityController {
     }
 
     @GetMapping("/login")
-    public String login(Model model) {
+    public String login(Model model, Authentication authentication) {
+        if(authentication != null){
+            return "redirect:Home";
+        }
         model.addAttribute("user", new User());
         return "login";
     }

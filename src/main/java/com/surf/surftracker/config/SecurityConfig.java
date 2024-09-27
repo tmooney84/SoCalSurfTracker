@@ -37,11 +37,15 @@ public class SecurityConfig  {
                         .permitAll()
                 )
                 .logout(logout -> logout
-                        .logoutUrl("/logout")  // Specify the logout URL (default is /logout)
-                        .logoutSuccessUrl("/login?logout") // Redirect to the login page with a logout parameter
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login")
                         .invalidateHttpSession(true) // Invalidate the session
                         .deleteCookies("JSESSIONID") // Delete cookies
                 )
+                .oauth2Login(oauth2 -> oauth2
+                        .loginPage("/login") // Redirect to the same custom login page
+                        .defaultSuccessUrl("/Home")
+                        .failureUrl("/error"))
                 .build();
 
     }
