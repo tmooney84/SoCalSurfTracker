@@ -17,7 +17,7 @@ public class SurftrackerApplication {
 		SpringApplication.run(SurftrackerApplication.class, args);
 	}
 
-	@Bean
+@Bean
 	public Current getLowerTrestlesCurrent() {
 		Current lowerTrestlesCurrent = new Current();
 

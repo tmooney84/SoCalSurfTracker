@@ -52,20 +52,6 @@ public class SecurityConfig  {
     public static BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
-//    @Bean
-//    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
-//        AuthenticationManagerBuilder authenticationManagerBuilder =
-//                new AuthenticationManagerBuilder(http.getSharedObject(BeanFactory.class));
-//
-//        authenticationManagerBuilder
-//                .userDetailsService(jpaDetailsService)
-//                .passwordEncoder(enc);
-//
-//        return authenticationManagerBuilder.build();
-//    }
-
-
 }
 
 
@@ -76,10 +62,3 @@ public class SecurityConfig  {
 
 
 
-
-
-
-//    @Bean
-//    public static PasswordEncoder passwordEncoder(){
-//        return NoOpPasswordEncoder.getInstance();
-//    }

@@ -18,7 +18,7 @@ import java.util.NoSuchElementException;
 //@Scheduled
 
 public class CurrentMapperNEW {
-    private final Current currentSpot;
+   // private final Current currentSpot;
     private final SurfLine_rating_DTO currentRatingDTO;
     private final SurfLine_sunlight_DTO currentSunlightDTO;
     private final SurfLine_surf_DTO currentSurfDTO;
@@ -30,8 +30,8 @@ public class CurrentMapperNEW {
     Long nearestHour = TimeStampUtils.NearestHour();
     Long midnight = TimeStampUtils.Midnight();
 
-    public CurrentMapperNEW(Current currentSpot, SurfLine_rating_DTO currentRatingDTO, SurfLine_sunlight_DTO currentSunlightDTO, SurfLine_surf_DTO currentSurfDTO, SurfLine_wind_DTO currentWindDTO, SurfLine_weather_DTO currentWeatherDTO, SurfLine_tides_DTO currentTidesDTO, SurfLine_swells_DTO currentSwellsDTO) {
-        this.currentSpot = currentSpot;
+    public CurrentMapperNEW(SurfLine_rating_DTO currentRatingDTO, SurfLine_sunlight_DTO currentSunlightDTO, SurfLine_surf_DTO currentSurfDTO, SurfLine_wind_DTO currentWindDTO, SurfLine_weather_DTO currentWeatherDTO, SurfLine_tides_DTO currentTidesDTO, SurfLine_swells_DTO currentSwellsDTO) {
+      //  this.currentSpot = currentSpot;
         this.currentRatingDTO = currentRatingDTO;
         this.currentSunlightDTO = currentSunlightDTO;
         this.currentSurfDTO = currentSurfDTO;

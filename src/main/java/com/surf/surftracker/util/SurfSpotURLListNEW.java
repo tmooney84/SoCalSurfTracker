@@ -2,17 +2,17 @@ package com.surf.surftracker.util;
 
 public class SurfSpotURLListNEW {
     public static final SurfSpotURLs[] SURF_SPOT_ARRAY;
-    //1) Ponto
-
-    //2) Tamarack
-
-    //3) Oceanside
-
-    //4) San Onofre
-
-    //5) Lower Trestles
     static {
         SURF_SPOT_ARRAY = new SurfSpotURLs[]{
+                //1) Ponto
+
+                //2) Tamarack
+
+                //3) Oceanside
+
+                //4) San Onofre
+
+                //5) Lower Trestles
                 new SurfSpotURLs("Lower Trestles",
                         "https://deepswell.com/surf-report/US/South-Orange-County/Lower-Trestles/1030",
                         "https://surfcaptain.com/forecast/trestles-california/",
@@ -34,6 +34,15 @@ public class SurfSpotURLListNEW {
                 "https://surfcaptain.com/forecast/dana-point-california/",
                 "https://www.surf-forecast.com/breaks/Doheney-Beach/forecasts/latest/",
                 "5842041f4e65fad6a77088d7"),
+
+                //9) Salt Creek
+
+                //10) Newport Beach
+
+                //11) Huntington Beach
+
+                //12) Seal Beach
+
     };
     }
     //Utility method to get the surf spots array
@@ -42,20 +51,3 @@ public class SurfSpotURLListNEW {
     }
 
 }
-        //9) Salt Creek
-
-        //10) Newport Beach
-
-        //11) Huntington Beach
-
-        //12) Seal Beach
-
-        // Feed the list into a factory method
-        //  processSurfSpots(surfSpots);
-//just for testing
-   /* public static void processSurfSpots(List<SurfSpotURL> surfSpots) {
-        for (SurfSpotURL spot : surfSpots) {
-            System.out.println("Surf Spot: " + spot.surfCaptainURL());
-            System.out.println();
-        } */
-// }
