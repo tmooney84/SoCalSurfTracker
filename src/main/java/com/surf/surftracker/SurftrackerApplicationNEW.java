@@ -1,18 +1,9 @@
 package com.surf.surftracker;
 
-import com.surf.surftracker.dto.*;
-import com.surf.surftracker.mapper.CurrentMapper;
 import com.surf.surftracker.model.Current;
-import com.surf.surftracker.service.DeepSwell_Service;
-import com.surf.surftracker.service.SurfForecast_Service;
-import com.surf.surftracker.service.SurfLineService;
-import com.surf.surftracker.service.Surf_Captain_Service;
 import com.surf.surftracker.util.SurfSpotURLs;
 import com.surf.surftracker.util.SurfSpotURLListNEW;
 import com.surf.surftracker.factory.CurrentFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 import java.util.HashMap;
 import java.util.Map;

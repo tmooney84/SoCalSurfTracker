@@ -40,6 +40,11 @@ public class SurfSpotURLListNEW {
                         "5842041f4e65fad6a770888a"),
 
         //6 Upper Trestles
+                new SurfSpotURLs("Upper Trestles",
+                        "https://deepswell.com/surf-report/US/South-Orange-County/Upper-Trestles/1029",
+                        "https://surfcaptain.com/forecast/trestles-california",
+                        "https://www.surf-forecast.com/breaks/Trestles_Uppers/forecasts/latest/",
+                        "5842041f4e65fad6a7708887"),
 
         //7) T-Street
         new SurfSpotURLs("T-Street",
@@ -56,29 +61,29 @@ public class SurfSpotURLListNEW {
                 "5842041f4e65fad6a77088d7"),
 
                 //9) Salt Creek
-//                new SurfSpotURLs("Doheny",
-//                        "https://deepswell.com/surf-report/US/South-Orange-County/Doheny-State-Beach/1027",
-//                        "https://surfcaptain.com/forecast/dana-point-california/",
-//                        "https://www.surf-forecast.com/breaks/Doheney-Beach/forecasts/latest/",
-//                        "5842041f4e65fad6a77088d7"),
-//                //10) Newport Beach
-//                new SurfSpotURLs("Doheny",
-//                        "https://deepswell.com/surf-report/US/South-Orange-County/Doheny-State-Beach/1027",
-//                        "https://surfcaptain.com/forecast/dana-point-california/",
-//                        "https://www.surf-forecast.com/breaks/Doheney-Beach/forecasts/latest/",
-//                        "5842041f4e65fad6a77088d7"),
-//                //11) Huntington Beach
-//                new SurfSpotURLs("Doheny",
-//                        "https://deepswell.com/surf-report/US/South-Orange-County/Doheny-State-Beach/1027",
-//                        "https://surfcaptain.com/forecast/dana-point-california/",
-//                        "https://www.surf-forecast.com/breaks/Doheney-Beach/forecasts/latest/",
-//                        "5842041f4e65fad6a77088d7"),
-//                //12) Seal Beach
-//                new SurfSpotURLs("Doheny",
-//                        "https://deepswell.com/surf-report/US/South-Orange-County/Doheny-State-Beach/1027",
-//                        "https://surfcaptain.com/forecast/dana-point-california/",
-//                        "https://www.surf-forecast.com/breaks/Doheney-Beach/forecasts/latest/",
-//                        "5842041f4e65fad6a77088d7"),
+                new SurfSpotURLs("Salt Creek",
+                        "https://deepswell.com/surf-report/US/South-Orange-County/Salt-Creek/1026",
+                        "https://surfcaptain.com/forecast/laguna-beach-california",
+                        "https://www.surf-forecast.com/breaks/Salt-Creek-Beach-Park/forecasts/latest/",
+                        "5842041f4e65fad6a770882e"),
+                //10) Newport Beach
+                new SurfSpotURLs("Newport Beach",
+                        "https://deepswell.com/surf-report/US/North-Orange-County/Newport-Beach/1055",
+                        "https://surfcaptain.com/forecast/newport-beach-california",
+                        "https://www.surf-forecast.com/breaks/Newportbeach/forecasts/latest/",
+                        "5842041f4e65fad6a77088f2"),
+                //11) Huntington Beach
+                new SurfSpotURLs("Huntington Beach",
+                        "https://deepswell.com/surf-report/US/North-Orange-County/Huntington-State-Beach/1052",
+                        "https://surfcaptain.com/forecast/huntington-beach-california",
+                        "https://www.surf-forecast.com/breaks/Huntington-Beach/forecasts/latest/",
+                        "584204204e65fad6a770998c"),
+                //12) Seal Beach Pier
+                new SurfSpotURLs("Seal Beach Pier",
+                        "https://deepswell.com/surf-report/US/North-Orange-County/Seal-Beach-Pier/1045",
+                        "https://surfcaptain.com/forecast/seal-beach-california",
+                        "https://www.surf-forecast.com/breaks/Seal-Beach-Pier/forecasts/latest/",
+                        "5b71b95fc27dc6001ab8becf"),
     };
     }
     //Utility method to get the surf spots array
