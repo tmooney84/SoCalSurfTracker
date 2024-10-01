@@ -7,7 +7,7 @@ import com.surf.surftracker.factory.CurrentFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-//
+
 //@SpringBootApplication(scanBasePackages = "com.surf.surftracker")
 public class SurftrackerApplicationNEW {
 
