@@ -5,14 +5,19 @@ import com.surf.surftracker.util.SurfSpotURLs;
 import com.surf.surftracker.util.SurfSpotURLListNEW;
 import com.surf.surftracker.factory.CurrentFactory;
 
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
 import java.util.HashMap;
 import java.util.Map;
 
-//@SpringBootApplication(scanBasePackages = "com.surf.surftracker")
+@SpringBootApplication(scanBasePackages = "com.surf.surftracker")
 public class SurftrackerApplicationNEW {
 
 	public static void main(String[] args) throws Exception {
-   // SpringApplication.run(SurftrackerApplicationNEW.class, args);
+      SpringApplication.run(SurftrackerApplicationNEW.class, args);
 
 	Map<String,Current> currentMap = SurftrackerApplicationNEW.getCurrent();
 
@@ -21,11 +26,9 @@ public class SurftrackerApplicationNEW {
 		    System.out.println();
 		});
 	}
-	//@Bean
+	@Bean
 	public static Map<String, Current> getCurrent() throws Exception {
 
-
-		//in runner class:
 		//access the surf spot records from the utility class
 		SurfSpotURLs[] surfSpots = SurfSpotURLListNEW.getSurfSpots();
 
