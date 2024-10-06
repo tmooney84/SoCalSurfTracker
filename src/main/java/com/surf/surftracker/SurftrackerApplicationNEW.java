@@ -21,10 +21,10 @@ public class SurftrackerApplicationNEW {
 
 	Map<String,Current> currentMap = SurftrackerApplicationNEW.getCurrent();
 
-		currentMap.forEach((key, value) -> {
-			System.out.println("Key: " + key + ", Value: " + value);
-		    System.out.println();
-		});
+//		currentMap.forEach((key, value) -> {
+//			System.out.println("Key: " + key + ", Value: " + value);
+//		    System.out.println();
+//		});
 	}
 	@Bean
 	public static Map<String, Current> getCurrent() throws Exception {

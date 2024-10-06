@@ -52,7 +52,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#ponto">Ponto (Carlsbad)</a>
+      <a href="/PontoCurrent">Ponto (Carlsbad)</a>
       <a href="#tamarack">Tamarack </a>
       <a href="#oceanside">Oceanside </a>
       <a href="#sano">San Onofre </a>
@@ -62,7 +62,7 @@
       <a href="#doheny">Doheny</a>
       <a href="#saltcreek">Salt Creek</a>
       <a href="#newport">Newport Beach</a>
-      <a href="#huntington">Huntington Beach</a>
+      <a href="/HuntingtonBeachCurrent">Huntington Beach</a>
       <a href="#seal-beach">Seal Beach Pier</a>
     </div>
   </div>
@@ -112,8 +112,12 @@
     <table class="current-conditions" style="border-collapse: collapse; width: 50%; text-align: left;">
       <tr>
         <td style="white-space: nowrap;">Ponto (Carlsbad)</td>
-        <td style="white-space: nowrap;">3-4+</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${ponto != null && ponto.averageWaveHeight != null ? ponto.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+          <span th:text="${ponto != null && ponto.getWaveQuality() != null ? ponto.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
 
       <tr>
@@ -136,7 +140,10 @@
         <td style="white-space: nowrap;">
           <span th:text="${lowerTrestles != null && lowerTrestles.averageWaveHeight != null ? lowerTrestles.averageWaveHeight : 'N/A'}"></span>
         </td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${lowerTrestles != null && lowerTrestles.getWaveQuality() != null ? lowerTrestles.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
       <tr>
         <td style="white-space: nowrap;">Upper Trestles</td>

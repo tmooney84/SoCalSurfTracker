@@ -41,6 +41,35 @@ public class Current_ControllerNEW {
         return "testpage";  // This should correspond to a Thymeleaf template named 'testpage.html'
     }
 
+    //Ponto
+
+    @GetMapping("/PontoCurrent")
+    public String getPonto(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Ponto (Carlsbad)"));
+        return "pontoCurrent";
+    }
+
+
+//    //Tamarack
+//    @GetMapping("/lowerTrestlesCurrent")
+//    public String getLowerTrestles(Model model) {
+//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
+//        return "lowerTrestlesCurrent";
+//    }
+//
+//    //Oceanside
+//    @GetMapping("/lowerTrestlesCurrent")
+//    public String getLowerTrestles(Model model) {
+//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
+//        return "lowerTrestlesCurrent";
+//    }
+//    //San Onofre
+//    @GetMapping("/lowerTrestlesCurrent")
+//    public String getLowerTrestles(Model model) {
+//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
+//        return "lowerTrestlesCurrent";
+
+    //Lower Trestles    ********change the Lower Trestles name to the  <span th:text="${surfSpot.getSurfSpotName() != null ? surfSpot.getSurfSpotName() : 'N/A'}"
     @GetMapping("/lowerTrestlesCurrent")
     public String getLowerTrestles(Model model) {
         model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
@@ -57,20 +86,72 @@ public class Current_ControllerNEW {
         return "lowerTrestlesFiveDay"; // Stubbed Pag
     }
 
-    @GetMapping("/TStreetCurrent")
-    public String TStreetCurrent() {
-        return "tStreetCurrent"; // Stubbed Page
+
+
+//    //Upper Trestles
+//        @GetMapping("/lowerTrestlesCurrent")
+//        public String getLowerTrestles(Model model) {
+//            model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
+//            return "lowerTrestlesCurrent";
+
+
+//    //T Street
+//    @GetMapping("/TStreetCurrent")
+//    public String TStreetCurrent() {
+//        return "tStreetCurrent"; // Stubbed Page
+//    }
+//
+//    @GetMapping("/TStreetHourly")
+//    public String TStreetHourly() {
+//        return "tStreetHourly"; // Stubbed Page
+//    }
+//
+//    @GetMapping("/TStreetFiveDay")
+//    public String TStreetFiveDay() {
+//        return "tStreetFiveDay"; // Stubbed Page
+//    }
+
+
+//    //Doheny
+//    @GetMapping("/lowerTrestlesCurrent")
+//    public String getLowerTrestles(Model model) {
+//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
+//        return "lowerTrestlesCurrent";
+//
+//
+//    //Salt Creek
+//    @GetMapping("/lowerTrestlesCurrent")
+//    public String getLowerTrestles(Model model) {
+//       model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
+//       return "lowerTrestlesCurrent";
+//
+//
+//    //Newport Beach
+//    @GetMapping("/lowerTrestlesCurrent")
+//    public String getLowerTrestles(Model model) {
+//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
+//        return "lowerTrestlesCurrent";
+
+
+    //Huntington Beach                                  ****need to complete
+    @GetMapping("/HuntingtonBeachCurrent")
+    public String HuntingtonBeachCurrent() {
+        return "huntingtonBeachCurrent"; // Stubbed Page
+    }
+    @GetMapping("/HuntingtonBeachHourly")
+    public String HuntingtonBeachHourly() {
+        return "huntingtonBeachHourly"; // Stubbed Page
+    }
+    @GetMapping("/HuntingtonBeachFiveDay")
+    public String HuntingtonBeachFiveDay() {
+        return "huntingtonBeachFiveDay"; // Stubbed Page
     }
 
-    @GetMapping("/TStreetHourly")
-    public String TStreetHourly() {
-        return "tStreetHourly"; // Stubbed Page
-    }
+    //Seal Beach Pier
 
-    @GetMapping("/TStreetFiveDay")
-    public String TStreetFiveDay() {
-        return "tStreetFiveDay"; // Stubbed Page
-    }
+
+
+
 
     /*
     @GetMapping("/")
@@ -79,10 +160,11 @@ public class Current_ControllerNEW {
     }
 */
 
-
+    //**** need to update
     @GetMapping("/Home")
     public String TStreetCurrent2(Model model) {
         model.addAttribute("lowerTrestles", currentMap.get("Lower Trestles"));
+        model.addAttribute("ponto", currentMap.get("Ponto (Carlsbad)"));
         model.addAttribute("users", userService.findAll());
         return "Home";
     }
