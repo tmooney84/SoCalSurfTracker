@@ -51,55 +51,57 @@ public class Current_ControllerNEW {
 
 
 //    //Tamarack
-//    @GetMapping("/lowerTrestlesCurrent")
-//    public String getLowerTrestles(Model model) {
-//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
-//        return "lowerTrestlesCurrent";
-//    }
-//
-//    //Oceanside
-//    @GetMapping("/lowerTrestlesCurrent")
-//    public String getLowerTrestles(Model model) {
-//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
-//        return "lowerTrestlesCurrent";
-//    }
-//    //San Onofre
-//    @GetMapping("/lowerTrestlesCurrent")
-//    public String getLowerTrestles(Model model) {
-//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
-//        return "lowerTrestlesCurrent";
+    @GetMapping("/TamarackCurrent")
+    public String getTamarack(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Tamarack"));
+        return "tamarackCurrent";
+    }
 
-    //Lower Trestles    ********change the Lower Trestles name to the  <span th:text="${surfSpot.getSurfSpotName() != null ? surfSpot.getSurfSpotName() : 'N/A'}"
-    @GetMapping("/lowerTrestlesCurrent")
+    //Oceanside
+    @GetMapping("/OceansideCurrent")
+    public String getOceanside(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Oceanside"));
+        return "oceansideCurrent";
+    }
+
+    //San Onofre
+    @GetMapping("/SanOnofreCurrent")
+    public String getSanOnofreCurrent(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("San Onofre"));
+        return "sanOnofreCurrent";
+    }
+
+    //Lower Trestles
+    //also Hourly and FiveDay are stubbed
+    @GetMapping("/LowerTrestlesCurrent")
     public String getLowerTrestles(Model model) {
         model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
         return "lowerTrestlesCurrent";
     }
 
-    @GetMapping("/lowerTrestlesHourly")
+    @GetMapping("/LowerTrestlesHourly")
     public String lowerTrestlesHourly() {
         return "lowerTrestlesHourly"; // Stubbed Page
     }
 
-    @GetMapping("/lowerTrestlesFiveDay")
+    @GetMapping("/LowerTrestlesFiveDay")
     public String lowerTrestlesFiveDay() {
         return "lowerTrestlesFiveDay"; // Stubbed Pag
     }
 
+    //Upper Trestles
+        @GetMapping("/UpperTrestlesCurrent")
+        public String getUpperTrestles(Model model) {
+            model.addAttribute("surfSpot", currentMap.get("Upper Trestles"));
+            return "upperTrestlesCurrent";
+        }
 
-
-//    //Upper Trestles
-//        @GetMapping("/lowerTrestlesCurrent")
-//        public String getLowerTrestles(Model model) {
-//            model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
-//            return "lowerTrestlesCurrent";
-
-
-//    //T Street
-//    @GetMapping("/TStreetCurrent")
-//    public String TStreetCurrent() {
-//        return "tStreetCurrent"; // Stubbed Page
-//    }
+    //T Street
+    @GetMapping("/TStreetCurrent")
+    public String getTStreet(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("T-Street"));
+        return "tStreetCurrent";
+    }
 //
 //    @GetMapping("/TStreetHourly")
 //    public String TStreetHourly() {
@@ -112,42 +114,53 @@ public class Current_ControllerNEW {
 //    }
 
 
-//    //Doheny
-//    @GetMapping("/lowerTrestlesCurrent")
-//    public String getLowerTrestles(Model model) {
-//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
-//        return "lowerTrestlesCurrent";
-//
-//
-//    //Salt Creek
-//    @GetMapping("/lowerTrestlesCurrent")
-//    public String getLowerTrestles(Model model) {
-//       model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
-//       return "lowerTrestlesCurrent";
-//
-//
-//    //Newport Beach
-//    @GetMapping("/lowerTrestlesCurrent")
-//    public String getLowerTrestles(Model model) {
-//        model.addAttribute("surfSpot", currentMap.get("Lower Trestles"));
-//        return "lowerTrestlesCurrent";
+    //Doheny
+    @GetMapping("/DohenyCurrent")
+    public String getDoheny(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Doheny"));
+        return "dohenyCurrent";
+    }
 
+
+    //Salt Creek
+    @GetMapping("/SaltCreekCurrent")
+    public String getSaltCreek(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Salt Creek"));
+        return "saltCreekCurrent";
+    }
+
+
+    //Newport Beach
+    @GetMapping("/NewportBeachCurrent")
+    public String getNewportBeach(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Newport Beach"));
+        return "newportBeachCurrent";
+    }
 
     //Huntington Beach                                  ****need to complete
     @GetMapping("/HuntingtonBeachCurrent")
-    public String HuntingtonBeachCurrent() {
-        return "huntingtonBeachCurrent"; // Stubbed Page
-    }
-    @GetMapping("/HuntingtonBeachHourly")
-    public String HuntingtonBeachHourly() {
-        return "huntingtonBeachHourly"; // Stubbed Page
-    }
-    @GetMapping("/HuntingtonBeachFiveDay")
-    public String HuntingtonBeachFiveDay() {
-        return "huntingtonBeachFiveDay"; // Stubbed Page
+    public String getHuntingtonBeach(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Huntington Beach"));
+        return "huntingtonBeachCurrent";
     }
 
+
+//    @GetMapping("/HuntingtonBeachHourly")
+//    public String HuntingtonBeachHourly() {
+//        return "huntingtonBeachHourly"; // Stubbed Page
+//    }
+//    @GetMapping("/HuntingtonBeachFiveDay")
+//    public String HuntingtonBeachFiveDay() {
+//        return "huntingtonBeachFiveDay"; // Stubbed Page
+//    }
+
     //Seal Beach Pier
+    @GetMapping("/SealBeachPierCurrent")
+    public String getSealBeachPier(Model model) {
+        model.addAttribute("surfSpot", currentMap.get("Seal Beach Pier"));
+        return "sealBeachPierCurrent";
+    }
+
 
 
 
@@ -162,9 +175,19 @@ public class Current_ControllerNEW {
 
     //**** need to update
     @GetMapping("/Home")
-    public String TStreetCurrent2(Model model) {
-        model.addAttribute("lowerTrestles", currentMap.get("Lower Trestles"));
+    public String getHome(Model model) {
         model.addAttribute("ponto", currentMap.get("Ponto (Carlsbad)"));
+        model.addAttribute("tamarack", currentMap.get("Tamarack"));
+        model.addAttribute("oceanside", currentMap.get("Oceanside"));
+        model.addAttribute("sanOnofre", currentMap.get("San Onofre"));
+        model.addAttribute("lowerTrestles", currentMap.get("Lower Trestles"));
+        model.addAttribute("upperTrestles", currentMap.get("Upper Trestles"));
+        model.addAttribute("tStreet", currentMap.get("T-Street"));
+        model.addAttribute("doheny", currentMap.get("Doheny"));
+        model.addAttribute("saltCreek", currentMap.get("Salt Creek"));
+        model.addAttribute("newportBeach", currentMap.get("Newport Beach"));
+        model.addAttribute("huntingtonBeach", currentMap.get("Huntington Beach"));
+        model.addAttribute("sealBeachPier", currentMap.get("Seal Beach Pier"));
         model.addAttribute("users", userService.findAll());
         return "Home";
     }

@@ -53,17 +53,17 @@
     </button>
     <div class="dropdown-content">
       <a href="/PontoCurrent">Ponto (Carlsbad)</a>
-      <a href="#tamarack">Tamarack </a>
-      <a href="#oceanside">Oceanside </a>
-      <a href="#sano">San Onofre </a>
-      <a href="/lowerTrestlesCurrent">Lower Trestles</a>
-      <a href="#uppers">Upper Trestles</a>
+      <a href="/TamarackCurrent">Tamarack </a>
+      <a href="/OceansideCurrent">Oceanside </a>
+      <a href="/SanOnofreCurrent">San Onofre </a>
+      <a href="/LowerTrestlesCurrent">Lower Trestles</a>
+      <a href="/UpperTrestlesCurrent">Upper Trestles</a>
       <a href="/TStreetCurrent">T-Street</a>
-      <a href="#doheny">Doheny</a>
-      <a href="#saltcreek">Salt Creek</a>
-      <a href="#newport">Newport Beach</a>
+      <a href="/DohenyCurrent">Doheny</a>
+      <a href="/SaltCreekCurrent">Salt Creek</a>
+      <a href="/NewportBeachCurrent">Newport Beach</a>
       <a href="/HuntingtonBeachCurrent">Huntington Beach</a>
-      <a href="#seal-beach">Seal Beach Pier</a>
+      <a href="/SealBeachPierCurrent">Seal Beach Pier</a>
     </div>
   </div>
 
@@ -122,19 +122,34 @@
 
       <tr>
         <td style="white-space: nowrap;">Tamarack</td>
-        <td style="white-space: nowrap;">2-3</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${tamarack != null && tamarack.averageWaveHeight != null ? tamarack.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+          <span th:text="${tamarack != null && tamarack.getWaveQuality() != null ? tamarack.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">Oceanside</td>
-        <td style="white-space: nowrap;">3-5</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${oceanside != null && oceanside.averageWaveHeight != null ? oceanside.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+          <span th:text="${oceanside != null && oceanside.getWaveQuality() != null ? oceanside.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">San Onofre</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${sanOnofre != null && sanOnofre.averageWaveHeight != null ? sanOnofre.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+          <span th:text="${sanOnofre != null && sanOnofre.getWaveQuality() != null ? sanOnofre.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">Lower Trestles</td>
         <td style="white-space: nowrap;">
@@ -145,54 +160,98 @@
           <span th:text="${lowerTrestles != null && lowerTrestles.getWaveQuality() != null ? lowerTrestles.getWaveQuality() : 'N/A'}"></span>
         </td>
       </tr>
+
+
       <tr>
         <td style="white-space: nowrap;">Upper Trestles</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${upperTrestles != null && upperTrestles.averageWaveHeight != null ? upperTrestles.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${upperTrestles != null && upperTrestles.getWaveQuality() != null ? upperTrestles.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">T-Street</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${tStreet != null && tStreet.averageWaveHeight != null ? tStreet.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${tStreet != null && tStreet.getWaveQuality() != null ? tStreet.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">Doheny</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${doheny != null && doheny.averageWaveHeight != null ? doheny.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${doheny != null && doheny.getWaveQuality() != null ? doheny.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">Salt Creek</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${saltCreek != null && saltCreek.averageWaveHeight != null ? saltCreek.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${saltCreek != null && saltCreek.getWaveQuality() != null ? saltCreek.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">Newport Beach</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${newportBeach != null && newportBeach.averageWaveHeight != null ? newportBeach.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${newportBeach != null && newportBeach.getWaveQuality() != null ? newportBeach.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">Huntington Beach</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${huntingtonBeach != null && huntingtonBeach.averageWaveHeight != null ? huntingtonBeach.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${huntingtonBeach != null && huntingtonBeach.getWaveQuality() != null ? huntingtonBeach.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
       <tr>
         <td style="white-space: nowrap;">Seal Beach Pier</td>
-        <td style="white-space: nowrap;">3-4</td>
-        <td style="white-space: nowrap;">Fair</td>
+        <td style="white-space: nowrap;">
+          <span th:text="${sealBeachPier != null && sealBeachPier.averageWaveHeight != null ? sealBeachPier.averageWaveHeight : 'N/A'}"></span>
+        </td>
+        <td style="white-space: nowrap;">
+
+          <span th:text="${sealBeachPier != null && sealBeachPier.getWaveQuality() != null ? sealBeachPier.getWaveQuality() : 'N/A'}"></span>
+        </td>
       </tr>
+
     </table>
   </div>
 </div>
 
-<table>
-  <tr>
-    <th><b>Fellow Surfers</b></th>
-  </tr>
-  <tr th:each="user: ${users}">
-    <td th:text="${user.username}"></td>
-    <!-- <td th:text="${user.homebreak}"></td> -->
-  </tr>
-</table>
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th><b>Fellow Surfers</b></th>-->
+<!--  </tr>-->
+<!--  <tr th:each="user: ${users}">-->
+<!--    <td th:text="${user.username}"></td>-->
+<!--    &lt;!&ndash; <td th:text="${user.homebreak}"></td> &ndash;&gt;-->
+<!--  </tr>-->
+<!--</table>-->
 
 </body>
 

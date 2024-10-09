@@ -52,23 +52,23 @@
       </button>
       <div class="dropdown-content">
         <a href="/PontoCurrent">Ponto (Carlsbad)</a>
-        <a href="#tamarack">Tamarack </a>
-        <a href="#oceanside">Oceanside </a>
-        <a href="#sano">San Onofre </a>
-        <a href="/lowerTrestlesCurrent">Lower Trestles</a>
-        <a href="#uppers">Upper Trestles</a>
+        <a href="/TamarackCurrent">Tamarack </a>
+        <a href="/OceansideCurrent">Oceanside </a>
+        <a href="/SanOnofreCurrent">San Onofre </a>
+        <a href="/LowerTrestlesCurrent">Lower Trestles</a>
+        <a href="/UpperTrestlesCurrent">Upper Trestles</a>
         <a href="/TStreetCurrent">T-Street</a>
-        <a href="#doheny">Doheny</a>
-        <a href="#saltcreek">Salt Creek</a>
-        <a href="#newport">Newport Beach</a>
+        <a href="/DohenyCurrent">Doheny</a>
+        <a href="/SaltCreekCurrent">Salt Creek</a>
+        <a href="/NewportBeachCurrent">Newport Beach</a>
         <a href="/HuntingtonBeachCurrent">Huntington Beach</a>
-        <a href="#seal-beach">Seal Beach Pier</a>
+        <a href="/SealBeachPierCurrent">Seal Beach Pier</a>
       </div>
     </div>
     <a class="current" href="/Home">Home</a>
     <a class="current" href="/TStreetCurrent">Current</a>
-    <a class="hourly" href="/TStreetHourly">Hourly</a>
-    <a class="forecast" href="/TStreetFiveDay">5 Day</a>
+    <a class="hourly" href="#TStreetHourly">Hourly</a>
+    <a class="forecast" href="#TStreetFiveDay">5 Day</a>
 
     <!-- Logout Button -->
 
@@ -77,7 +77,7 @@
   </div>
 
   <div>
-    <h2 style="text-align: left;">T-Street (San Clemente) <br> Conditions</h2>
+    <h2 style="text-align: left;"><span th:text="${surfSpot.getSurfSpotName() != null ? surfSpot.getSurfSpotName() : 'N/A'}"></span> <br> Conditions</h2>
   </div>
 
   <!-- Video, Time, and Conditions Container -->
@@ -93,8 +93,8 @@
 
             <!-- Current Conditions -->
             <tr>
-              <td style="font-size: 24px; white-space: nowrap; padding-right: 20px"><b>3-4ft</b></td>
-              <td class="highlight-bg" style="font-size: 24px; white-space: nowrap"><b>Fair</b></td>
+              <td style="font-size: 24px; white-space: nowrap; padding-right: 20px"><b><span th:text="${surfSpot.averageWaveHeight != null ? surfSpot.averageWaveHeight : 'N/A'}"></span></b></td>
+              <td class="highlight-bg" style="font-size: 24px; white-space: nowrap"><b><span th:text="${surfSpot.waveQuality != null ? surfSpot.waveQuality : 'N/A'}"></span></b></td>
             </tr>
             <tr>
             </tr>
@@ -114,7 +114,7 @@
               SurfLine
             </a>
           </td>
-          <td style="white-space: nowrap;">3-4+</td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.surfLineWaveHeight != null ? surfSpot.surfLineWaveHeight : 'N/A'}"></span></td>
         </tr>
 
         <tr>
@@ -123,7 +123,7 @@
               SurfCaptain
             </a>
           </td>
-          <td style="white-space: nowrap;">2-3</td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.surfCaptainWaveHeight != null ? surfSpot.surfCaptainWaveHeight : 'N/A'}"></span></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;">
@@ -131,7 +131,7 @@
               DeepSwell
             </a>
           </td>
-          <td style="white-space: nowrap;">3-5</td>
+          <td style="white-space: nowrap;"> <span th:text="${surfSpot.deepSwellWaveHeight != null ? surfSpot.deepSwellWaveHeight : 'N/A'}"></span></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;">
@@ -139,35 +139,35 @@
               Surf-Forecast
             </a>
           </td>
-          <td style="white-space: nowrap;">3-4</td>
+          <td style="white-space: nowrap;"> <span th:text="${surfSpot.surfForecastWaveHeight != null ? surfSpot.surfForecastWaveHeight : 'N/A'}"></span></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;">Wind</td>
-          <td style="white-space: nowrap;">5mph E</td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.wind != null ? surfSpot.wind : 'N/A'}"></span></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;">Tide</td>
-          <td style="white-space: nowrap;">Low Tide @ 16:00</td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.tide != null ? surfSpot.tide : 'N/A'}"></span></td>
         </tr>
-        <tr>
-          <td style="white-space: nowrap;">Water Temperature</td>
-          <td style="white-space: nowrap;">67º</td>
-        </tr>
+<!--        <tr>-->
+<!--          <td style="white-space: nowrap;">Water Temperature</td>-->
+<!--          <td style="white-space: nowrap;">67º</td>-->
+<!--        </tr>-->
         <tr>
           <td style="white-space: nowrap;">Air Temperature</td>
-          <td style="white-space: nowrap;">82ºF</td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.airTemperature != null ? surfSpot.airTemperature : 'N/A'}"></span></td>
         </tr>
          <tr>
           <td style="white-space: nowrap;">Sunrise</td>
-          <td style="white-space: nowrap;">6:53 AM</td>
+           <td style="white-space: nowrap;"><span th:text="${surfSpot.sunrise != null ? surfSpot.sunrise : 'N/A'}"></span></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;">Sunset</td>
-          <td style="white-space: nowrap;">7:24 PM</td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.sunset != null ? surfSpot.sunset : 'N/A'}"></span></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;">Weather</td>
-          <td style="white-space: nowrap;">Sunny</td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.weatherConditions != null ? surfSpot.weatherConditions : 'N/A'}"></span></td>
         </tr>
       </table>
     </div>
@@ -179,28 +179,20 @@
     <div class="table-container" style="display: flex; justify-content: left;">
       <table class="current-conditions" style="border-collapse: collapse; width: 50%; text-align: center;">
         <tr style="font-weight: bold; background-color: #30b12b; color: white;">
-          <td>Wave Height</td>
-          <td>Period</td>
-          <td>Direction</td>
-          <td>Angle</td>
+          <td>Swells</td>
+          <td>Data</td>
         </tr>
         <tr>
-          <td><b>1.7ft</b></td>
-          <td><b>10s</b></td>
-          <td><b>S</b></td>
-          <td><b>177º</b></td>
+          <td><b>Main Swell</b></td>
+          <td><b><span th:text="${surfSpot.swellOne != null ? surfSpot.swellOne : 'N/A'}"></span></b></td>
         </tr>
         <tr>
-          <td><b>1.1ft</b></td>
-          <td><b>15s</b></td>
-          <td><b>SW</b></td>
-          <td><b>216º</b></td>
+          <td><b>Secondary Swell</b></td>
+          <td><b><span th:text="${surfSpot.swellTwo != null ? surfSpot.swellTwo : 'N/A'}"></span></b></td>
         </tr>
         <tr>
-          <td><b>1.0ft</b></td>
-          <td><b>7s</b></td>
-          <td><b>WNW</b></td>
-          <td><b>283º</b></td>
+          <td><b>Tertiary Swell</b></td>
+          <td><b><span th:text="${surfSpot.swellThree != null ? surfSpot.swellThree : 'N/A'}"></span></b></td>
         </tr>
       </table>
     </div>

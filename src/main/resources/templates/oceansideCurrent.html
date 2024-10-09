@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Surf Tracker</title>
   <link rel="icon" type="image/x-icon" href="surf.JPG">
-  <link rel="stylesheet" href="video_current_styles.css">
-  <script src="time.js" defer></script>
+  <link rel="stylesheet" href="/picture_current_styles.css">
+  <script src="/time.js" defer></script>
   <style>
     /* Add padding to table cells */
     table.current-conditions td, 
@@ -55,7 +55,7 @@
         <a href="/TamarackCurrent">Tamarack </a>
         <a href="/OceansideCurrent">Oceanside </a>
         <a href="/SanOnofreCurrent">San Onofre </a>
-        <a href="/lowerTrestlesCurrent">Lower Trestles</a>
+        <a href="/LowerTrestlesCurrent">Lower Trestles</a>
         <a href="/UpperTrestlesCurrent">Upper Trestles</a>
         <a href="/TStreetCurrent">T-Street</a>
         <a href="/DohenyCurrent">Doheny</a>
@@ -66,9 +66,9 @@
       </div>
     </div>
     <a class="current" href="/Home">Home</a>
-    <a class="current" href="/HuntingtonBeachCurrent">Current</a>
-    <a class="hourly" href="#HuntingtonBeachHourly">Hourly</a>
-    <a class="forecast" href="#HuntingonBeachFiveDay">5 Day</a>
+    <a class="current" href="/OceansideCurrent">Current</a>
+    <a class="hourly" href="#OceansideHourly">Hourly</a>
+    <a class="forecast" href="#OceansideFiveDay">5 Day</a>
 
     <!-- Logout Button -->
 
@@ -77,12 +77,13 @@
   </div>
 
   <div>
+   <!-- <h2 style="text-align: left;"> <span th:text="${surfSpot.surfSpotName != null ? surfSpot.surfSpotName : 'N/A'}"></span> <br>Conditions</h2> -->
     <h2 style="text-align: left;"><span th:text="${surfSpot.getSurfSpotName() != null ? surfSpot.getSurfSpotName() : 'N/A'}"></span> <br> Conditions</h2>
   </div>
 
-  <!-- Video, Time, and Conditions Container -->
+  <!-- Image, Time, and Conditions Container -->
   <div class="video-time-container">
-    <iframe src="https://www.youtube.com/embed/mhQjsLBfOoY" allowfullscreen></iframe>
+    <img src="oceanside.jpg" alt="Oceanside">
     <div>
       <div id="time">14:45:23</div>
       <div style="padding: 16px">
@@ -93,7 +94,10 @@
 
             <!-- Current Conditions -->
             <tr>
+              <!--   <td style="font-size: 24px; white-space: nowrap; padding-right: 20px"><b>3-4ft</b></td>   -->
               <td style="font-size: 24px; white-space: nowrap; padding-right: 20px"><b><span th:text="${surfSpot.averageWaveHeight != null ? surfSpot.averageWaveHeight : 'N/A'}"></span></b></td>
+              <!--  <td class="highlight-bg" style="font-size: 24px; white-space: nowrap"><b>Fair</b></td>    -->
+
               <td class="highlight-bg" style="font-size: 24px; white-space: nowrap"><b><span th:text="${surfSpot.waveQuality != null ? surfSpot.waveQuality : 'N/A'}"></span></b></td>
             </tr>
             <tr>
@@ -110,16 +114,18 @@
       <table class="current-conditions" style="border-collapse: collapse; width: 50%; text-align: left;">
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://www.surfline.com/surf-report/huntington-state-beach/584204204e65fad6a770998c?camId=5f6238e8c22bc01405e28435">
+            <a href="https://www.surfline.com/surf-report/oceanside-pier/5842041f4e65fad6a7708835?camId=58349e42e411dc743a5d52c4">
               SurfLine
             </a>
           </td>
+          <!--   <td style="white-space: nowrap;">3-4+</td>   -->
+
           <td style="white-space: nowrap;"><span th:text="${surfSpot.surfLineWaveHeight != null ? surfSpot.surfLineWaveHeight : 'N/A'}"></span></td>
         </tr>
 
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://surfcaptain.com/forecast/huntington-beach-california">
+            <a href="https://surfcaptain.com/forecast/oceanside-california">
               SurfCaptain
             </a>
           </td>
@@ -127,7 +133,7 @@
         </tr>
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://deepswell.com/surf-report/US/North-Orange-County/Huntington-State-Beach/1052">
+            <a href="https://deepswell.com/surf-report/US/North-San-Diego/Oceanside-Pier-northside/1001">
               DeepSwell
             </a>
           </td>
@@ -135,7 +141,7 @@
         </tr>
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://www.surf-forecast.com/breaks/Huntington-Beach/forecasts/latest/">
+            <a href="https://www.surf-forecast.com/breaks/Oceanside-Pier/forecasts/latest/">
               Surf-Forecast
             </a>
           </td>
@@ -149,17 +155,19 @@
           <td style="white-space: nowrap;">Tide</td>
           <td style="white-space: nowrap;"><span th:text="${surfSpot.tide != null ? surfSpot.tide : 'N/A'}"></span></td>
         </tr>
-<!--        <tr>-->
-<!--          <td style="white-space: nowrap;">Water Temperature</td>-->
-<!--          <td style="white-space: nowrap;">67º</td>-->
-<!--        </tr>-->
+       <!--
+        <tr>
+          <td style="white-space: nowrap;">Water Temperature</td>
+          <td style="white-space: nowrap;">67º</td>
+        </tr>
+        -->
         <tr>
           <td style="white-space: nowrap;">Air Temperature</td>
           <td style="white-space: nowrap;"><span th:text="${surfSpot.airTemperature != null ? surfSpot.airTemperature : 'N/A'}"></span></td>
         </tr>
          <tr>
           <td style="white-space: nowrap;">Sunrise</td>
-           <td style="white-space: nowrap;"><span th:text="${surfSpot.sunrise != null ? surfSpot.sunrise : 'N/A'}"></span></td>
+          <td style="white-space: nowrap;"><span th:text="${surfSpot.sunrise != null ? surfSpot.sunrise : 'N/A'}"></span></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;">Sunset</td>

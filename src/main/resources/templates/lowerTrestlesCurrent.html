@@ -52,23 +52,23 @@
       </button>
       <div class="dropdown-content">
         <a href="/PontoCurrent">Ponto (Carlsbad)</a>
-        <a href="#tamarack">Tamarack </a>
-        <a href="#oceanside">Oceanside </a>
-        <a href="#sano">San Onofre </a>
-        <a href="/lowerTrestlesCurrent">Lower Trestles</a>
-        <a href="#uppers">Upper Trestles</a>
+        <a href="/TamarackCurrent">Tamarack </a>
+        <a href="/OceansideCurrent">Oceanside </a>
+        <a href="/SanOnofreCurrent">San Onofre </a>
+        <a href="/LowerTrestlesCurrent">Lower Trestles</a>
+        <a href="/UpperTrestlesCurrent">Upper Trestles</a>
         <a href="/TStreetCurrent">T-Street</a>
-        <a href="#doheny">Doheny</a>
-        <a href="#saltcreek">Salt Creek</a>
-        <a href="#newport">Newport Beach</a>
+        <a href="/DohenyCurrent">Doheny</a>
+        <a href="/SaltCreekCurrent">Salt Creek</a>
+        <a href="NewportBeachCurrent">Newport Beach</a>
         <a href="/HuntingtonBeachCurrent">Huntington Beach</a>
-        <a href="#seal-beach">Seal Beach Pier</a>
+        <a href="/SealBeachPierCurrent">Seal Beach Pier</a>
       </div>
     </div>
     <a class="current" href="/Home">Home</a>
-    <a class="current" href="/lowerTrestlesCurrent">Current</a>
-    <a class="hourly" href="/lowerTrestlesHourly">Hourly</a>
-    <a class="forecast" href="/lowerTrestlesFiveDay">5 Day</a>
+    <a class="current" href="/LowerTrestlesCurrent">Current</a>
+    <a class="hourly" href="#LowerTrestlesHourly">Hourly</a>
+    <a class="forecast" href="#LowerTrestlesFiveDay">5 Day</a>
 
     <!-- Logout Button -->
 
@@ -78,7 +78,7 @@
 
   <div>
    <!-- <h2 style="text-align: left;"> <span th:text="${surfSpot.surfSpotName != null ? surfSpot.surfSpotName : 'N/A'}"></span> <br>Conditions</h2> -->
-    <h2 style="text-align: left;">Lower Trestles <br> Conditions</h2>
+    <h2 style="text-align: left;"><span th:text="${surfSpot.getSurfSpotName() != null ? surfSpot.getSurfSpotName() : 'N/A'}"></span> <br> Conditions</h2>
   </div>
 
   <!-- Image, Time, and Conditions Container -->
@@ -114,7 +114,7 @@
       <table class="current-conditions" style="border-collapse: collapse; width: 50%; text-align: left;">
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://www.surfline.com/surf-report/t-street/5842041f4e65fad6a7708830?camId=5a3c086e1c60d700101da599">
+            <a href="https://www.surfline.com/surf-report/lower-trestles/5842041f4e65fad6a770888a?camId=58a37530c9d273fd4f581beb">
               SurfLine
             </a>
           </td>
@@ -125,7 +125,7 @@
 
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://surfcaptain.com/forecast/san-clemente-california">
+            <a href="https://surfcaptain.com/forecast/trestles-california/">
               SurfCaptain
             </a>
           </td>
@@ -133,7 +133,7 @@
         </tr>
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://deepswell.com/surf-report/US/South-Orange-County/T-Street-Trafalgar-Street/1057#google_vignette">
+            <a href="https://deepswell.com/surf-report/US/South-Orange-County/Lower-Trestles/1030">
               DeepSwell
             </a>
           </td>
@@ -141,7 +141,7 @@
         </tr>
         <tr>
           <td style="white-space: nowrap;">
-            <a href="https://www.surf-forecast.com/breaks/T-Street/forecasts/latest/six_day">
+            <a href="https://www.surf-forecast.com/breaks/Trestles_Lowers/forecasts/latest/">
               Surf-Forecast
             </a>
           </td>
