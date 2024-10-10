@@ -1,4 +1,4 @@
-package com.surf.surftracker;
+package com.surf.surftracker.tester;
 
 import com.surf.surftracker.dto.SurfLine_tides_DTO;
 import com.surf.surftracker.service.oldServices.SurfLine_tides_Service;

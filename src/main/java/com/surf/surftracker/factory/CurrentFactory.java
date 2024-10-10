@@ -1,13 +1,10 @@
 package com.surf.surftracker.factory;
 
 import com.surf.surftracker.dto.*;
-import com.surf.surftracker.mapper.CurrentMapper;
 import com.surf.surftracker.mapper.CurrentMapperNEW;
 import com.surf.surftracker.model.Current;
 import com.surf.surftracker.service.*;
 import com.surf.surftracker.util.SurfSpotURLs;
-
-import java.io.IOException;
 
 public class CurrentFactory {
 	private SurfSpotURLs spotURLs;

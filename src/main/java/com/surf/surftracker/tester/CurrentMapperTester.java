@@ -1,4 +1,4 @@
-package com.surf.surftracker;
+package com.surf.surftracker.tester;
 
 public class CurrentMapperTester {
 }
