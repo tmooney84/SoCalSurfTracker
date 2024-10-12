@@ -9,17 +9,20 @@ import com.surf.surftracker.factory.CurrentFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication(scanBasePackages = "com.surf.surftracker")
+@EnableScheduling
 public class SurftrackerApplicationNEW {
+	private static Map<String, Current> currentMap = new HashMap<>();
 
 	public static void main(String[] args) throws Exception {
       SpringApplication.run(SurftrackerApplicationNEW.class, args);
-
-	Map<String,Current> currentMap = SurftrackerApplicationNEW.getCurrent();
+	  currentMap = SurftrackerApplicationNEW.getCurrent();
 
 //		currentMap.forEach((key, value) -> {
 //			System.out.println("Key: " + key + ", Value: " + value);
@@ -46,5 +49,11 @@ public class SurftrackerApplicationNEW {
 			System.out.println(current.getSurfSpotName() + ": " + current);
 		}
 		return currentMap;
+	}
+	// Schedule the refresh of currentMap at 12 AM every day
+	@Scheduled(cron = "0 0 0 * * ?")
+	public void refreshCurrentMap() throws Exception {
+		currentMap = SurftrackerApplicationNEW.getCurrent();
+		System.out.println("Current map refreshed at 12 AM.");
 	}
 }
