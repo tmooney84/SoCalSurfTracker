@@ -109,21 +109,18 @@ In addition to 5-day weather and surf forecasts there are photos and videos for 
 - **WebClient:** For making external API calls that returned JSON data.
 
 ## Future Improvements
+- Surf update alert by text/email
 - Async calls for updating data for five day and hourly updates
 - Add and delete favorites and home breaks
 - Use metroweather api for weather API needs 
 - Create robust integration, unit and spec testing
-- Migrate to AWS, Google Cloud, Azure
-- Home page with current average wave size of each location
+- Migrate to AWS
 - Add map to homepage using google maps api or arcgis api 
-- Oath2 google, github, microsoft
+- Oath2 google, microsoft
 - Picture adding with featured picture of the day; if user does a review gets a free picture or secret endpoint
-- Surf update alert for Friday or Saturday by text
-- Surf music mix
 - Further surf break descriptions
 - Integrating map api endpoints
 - Fully integrate into timezones surfspot records classes
-- Figure out how to automatically log in after registering without bypassing Spring Security using a token
 - Message Board
 
 ## Contributing
