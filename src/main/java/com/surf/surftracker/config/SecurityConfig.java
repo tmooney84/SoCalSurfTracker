@@ -33,7 +33,7 @@ public class SecurityConfig  {
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/Home")
-                        .failureUrl("/login-error")
+                        .failureUrl("/error")
                         .permitAll()
                 )
                 .logout(logout -> logout
