@@ -86,6 +86,9 @@ This website is designed for easy usage and access to information for making dec
 
 - **Hourly Forecast Pages:** Gives hourly weather and surf forecasts
 - **5 Day Forecast Pages:** Gives daily weather and surf forecasts
+
+---
+
 ## Pages
 
 ### Home Page
