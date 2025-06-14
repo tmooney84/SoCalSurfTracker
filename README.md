@@ -100,7 +100,7 @@ In addition to hourly weather and surf forecasts there are photos and videos for
 In addition to 5-day weather and surf forecasts there are photos and videos for each of the relevent surf locations.
 
 ## Application Design
-![alt text for screen readers](/readme_imgs/data%20path.jpg "Application Design")
+![alt text for screen readers](/readme_imgs/data_path.jpg "Application Design")
 
 ## Technologies Used
 - **CSS:** For styling the website, including inline, internal, and external CSS. Utilizes Flexbox and optionally SASS/SCSS.
