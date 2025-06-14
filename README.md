@@ -73,26 +73,22 @@ This website is designed for easy usage and access to information for making dec
 ## Features
 
 - **Login Page:** Allows the user to login by OAuth or password.
-  ![alt text for screen readers](/readme_imgs/st_login.png "Login Page")
-
 - **Home Page:** Gives a Base Dashboard of information of current waves heights from different locations
-  ![alt text for screen readers](/readme_imgs/st_dashboard.png "Current Conditions Dashboard Page")
-
 - **Current Forecast Pages:** Gives current weather and surf conditions  
-  ![alt text for screen readers](/readme_imgs/current_sc.png "Surf Spot Current Conditions Page")
-
 - **Hourly Forecast Pages:** Gives hourly weather and surf forecasts
-
 - **5 Day Forecast Pages:** Gives daily weather and surf forecasts
 
 ## Pages
 
-### Home Page
+### Login Page
+![alt text for screen readers](/readme_imgs/st_login.png "Login Page")
 
+### Home Page
+![alt text for screen readers](/readme_imgs/st_dashboard.png "Current Conditions Dashboard Page")
 Contains information related to all 12 surf locations in one place.
 
 ### Current Forecast Pages
-
+![alt text for screen readers](/readme_imgs/current_sc.png "Surf Spot Current Conditions Page")
 In addition to current weather and surf conditions there are photos and video for each of the relevent surf locations.
 
 ### Hourly Forecast Pages
